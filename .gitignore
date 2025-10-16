@@ -1,0 +1,13 @@
+### ignore .env files
+.env
+
+### Ignore files of DB ###
+/mysql/data/*
+/mysql/logs/*
+
+### Ignore files of Project ###
+*Zone.Identifier
+
+### Not ignore files of DB ###
+!/mysql/data/index.html
+!/mysql/logs/index.html

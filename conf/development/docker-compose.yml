@@ -1,0 +1,72 @@
+version: '3.9'
+
+services:
+  frontend:
+    image: node:24-alpine3.21
+    # image: node:20-alpine
+    container_name: ${CONTAINER_NAME}_frontend
+    working_dir: /app
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${CONTAINER_NAME}-frontend.rule=Host(`${TRAEFIK_FRONT_DOMAIN}`)"
+      - "traefik.http.routers.${CONTAINER_NAME}-frontend.entrypoints=${TRAEFIK_ENTRYPOINT}"
+      - "traefik.http.services.${CONTAINER_NAME}-frontend.loadbalancer.server.port=${FRONTEND_PORT_CONTAINER}"
+      # - "traefik.http.routers.${CONTAINER_NAME}-frontend.rule=Host(`${TRAEFIK_FRONT_DOMAIN}`) || HostRegexp(`{any:.*}`)"
+    volumes:
+      - ${ROOT_PATH}${FRONTEND_LOCAL_PATH}:/app
+      - /app/node_modules
+    command: sh -c "npm install && npm run dev -- --host"
+    # ports:
+    #   - "${FRONTEND_PORT_LOCAL}:${FRONTEND_PORT_CONTAINER}"
+    depends_on: 
+      - ${BACKEND_SERVICE_NAME}
+    networks:
+      - ${TRAEFIK_NETWORK}
+
+  backend:
+    image: node:20-alpine
+    container_name: ${CONTAINER_NAME}_backend
+    working_dir: /app
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${CONTAINER_NAME}-backend.rule=Host(`${TRAEFIK_BACK_DOMAIN}`)"
+      - "traefik.http.routers.${CONTAINER_NAME}-backend.entrypoints=${TRAEFIK_ENTRYPOINT}"
+      - "traefik.http.services.${CONTAINER_NAME}-backend.loadbalancer.server.port=${BACKEND_PORT_CONTAINER}"
+    volumes:
+      - ${ROOT_PATH}${BACKEND_LOCAL_PATH}:/app
+      - /app/node_modules
+    command: sh -c "npm install && npm run dev"
+    # ports:
+    #   - "${BACKEND_PORT_LOCAL}:${BACKEND_PORT_CONTAINER}"
+    environment:
+      DB_HOST: ${DB_SERVICE_NAME}
+      DB_USER: ${MYSQL_USER}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_NAME: ${MYSQL_DATABASE}
+    depends_on:
+      - ${DB_SERVICE_NAME}
+    networks:
+      - ${TRAEFIK_NETWORK}
+
+  db:
+    image: mysql:8
+    container_name: ${CONTAINER_NAME}_db
+    restart: always
+    ports:
+      - "${DB_PORT_LOCAL}:${DB_PORT_CONTAINER}"
+    volumes:
+      - ${ROOT_PATH}${MYSQL_LOCAL_PATH}:/var/lib/mysql
+      - ${ROOT_PATH}${VOLUME_CONF}:/etc/mysql/conf.d
+      - ${ROOT_PATH}${VOLUME_MIGRATIONS}:/docker-entrypoint-initdb.d
+      - ${ROOT_PATH}${VOLUME_BACKUPS}:/backups
+      # - ${ROOT_PATH}${VOLUME_LOGS}:/var/log/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+        - ${TRAEFIK_NETWORK}
+networks:
+  traefik_net:
+    external: true
