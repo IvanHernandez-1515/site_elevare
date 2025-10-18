@@ -1,6 +1,7 @@
 class AppConfig {
   constructor() {
     /** Entorno */
+    this.siteName = 'Sistema de Currículums Elevare';
     this.env = 'development';
 
     /** Servidor */

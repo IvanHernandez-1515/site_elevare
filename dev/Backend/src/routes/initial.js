@@ -2,9 +2,9 @@ import { Router } from "express";
 
 const router = Router();
 
-// Ejemplo de uso del config
+//ejemplo de uso del config
 router.get('/', (req, res) => {
-    res.send(`🚀 Bienvenido a ${globalThis.config}`);
+    res.send(`🚀 Bienvenido a ${config.siteName}, en el puerto: ${config.port}`);
 });
 
 export {router as initialRoute};
