@@ -1,80 +1,163 @@
-✨ 1. Resumen ejecutivo
+# Elevare CV
 
-Elevare CV (nombre sugerido) es una plataforma de generación de currículums vitae digitales, dinámica, modular y ultra personalizable. El objetivo es permitir a cada usuario crear, editar y mantener múltiples versiones de sus CVs con:
+**Elevare CV** es una plataforma de generación de currículums vitae digitales, dinámica, modular y ultra personalizable. Su propósito es permitir a cada usuario crear, editar y mantener múltiples versiones de sus CVs con una experiencia moderna e intuitiva.
 
-Vista previa en tiempo real
+## Objetivo
 
-Plantillas intercambiables
+Brindar a cualquier persona una herramienta avanzada y fácil de usar para crear currículums profesionales, con vista previa en tiempo real, personalización total y opciones exportables.
 
-Personalización de colores, tipografía y estilo
+## Misión
 
-Posibilidad de agregar contenido potenciado por IA (en el futuro)
+Facilitar la generación de currículums vitae mediante una plataforma tecnológica accesible, intuitiva y personalizable, que se adapte a las necesidades de cada usuario sin requerir conocimientos técnicos.
 
-Además, cada usuario puede adaptar su dashboard (tema claro/oscuro, colores, diseño) para tener una experiencia personalizada, persistente y moderna.
+## Visión
 
+Convertirse en la herramienta líder para la creación de currículums en América Latina, promoviendo la empleabilidad a través del diseño inteligente, la accesibilidad y el uso de tecnologías modernas.
 
+---
 
-🎯 3. Requerimientos funcionales (versión inicial)
-🧑 Usuario
+## Estructura general del proyecto
 
-Registro (con validación por email opcional)
+├── conf
+│   ├── development
+│   │   └── docker-compose.yml
+│   └── production
+│       └── docker-compose.yml
+├── dev
+│   ├── Backend
+│   │   ├── conf
+│   │   │   └── configuration.js
+│   │   ├── index.js
+│   │   ├── node_modules
+│   │   ├── package-lock.json
+│   │   ├── package.json
+│   │   └── src
+│   │       ├── routes
+│   │       │   ├── index.js
+│   │       │   └── initial.js
+│   │       └── server.js
+│   ├── Frontend
+│   │   ├── README.md
+│   │   ├── eslint.config.js
+│   │   ├── index.html
+│   │   ├── node_modules
+│   │   ├── package-lock.json
+│   │   ├── package.json
+│   │   ├── postcss.config.js
+│   │   ├── public
+│   │   │   └── vite.svg
+│   │   ├── src
+│   │   │   ├── App.jsx
+│   │   │   ├── assets
+│   │   │   │   └── react.svg
+│   │   │   ├── index.css
+│   │   │   ├── main.jsx
+│   │   │   ├── pages
+│   │   │   │   └── Counter
+│   │   │   │       ├── Counter.css
+│   │   │   │       └── Counter.jsx
+│   │   │   ├── router
+│   │   │   │   └── AppRouter.jsx
+│   │   │   └── styles
+│   │   │       └── index.css
+│   │   ├── tailwind.config.js
+│   │   └── vite.config.js
+│   └── index.html
+├── mysql
+│   ├── backups
+│   │   └── index.html
+│   └── migrations
+│       └── index.html
+│   ├── scripts
+│       └── permisos.sh
+├── README.md
+└── run.sh
 
-Login con JWT
+---
 
-Recuperar contraseña
+## Descripción por módulo
 
-Perfil de usuario (nombre, foto, configuración visual)
+### Backend (Node.js + Express)
+- API REST para autenticación y gestión de currículums.
+- Uso de rutas organizadas (`/routes/index.js`, `/routes/initial.js`).
+- Configuración centralizada (`conf/configuration.js`).
+- Preparado para JWT y conexión con base de datos MySQL.
 
-📝 Currículums
+### Frontend (React + Vite + TailwindCSS)
+- Arquitectura modular con estructura clara por dominios (`features`, `pages`, `components`, etc).
+- Ruteo moderno con React Router.
+- Estilos configurados con TailwindCSS y PostCSS.
+- Integración con alias `@` para imports limpios.
 
-Crear CV nuevo
+### MySQL
+- Almacenamiento persistente para usuarios, currículums y configuraciones.
+- Directorios separados para datos, migraciones y respaldos.
 
-Guardar múltiples CV por usuario
+### Docker
+- Separación por entornos (`development`, `production`).
+- Contenedores para Frontend, Backend y Base de Datos.
+- Script `run.sh` para orquestar acciones comunes (levantamiento, permisos, backups, etc).
 
-Editar CV existentes
+---
 
-Duplicar CV
+## Tecnologías utilizadas
 
-Eliminar CV
+- **Frontend**
+  - React 18
+  - Vite
+  - TailwindCSS
 
-Descargar en PDF
+- **Backend**
+  - Node.js
+  - Express.js
 
-Compartir con link público (futuro)
+- **Base de datos**
+  - MySQL 8
 
-👀 Vista previa dinámica
+- **DevOps**
+  - Docker
+  - Docker Compose
+  - Bash scripting
 
-Al editar cualquier campo del CV, se refleja al instante en una vista previa a la derecha
+---
 
-Cambio de plantilla se aplica sin perder datos
+## Funcionalidades clave (versión inicial)
 
-Posibilidad de probar otra plantilla, luego regresar
+### Usuario
+- Registro con validación
+- Login seguro con JWT
+- Recuperación de contraseña
+- Perfil editable
 
-🎨 Personalización de plantilla
+### Currículum
+- Crear, editar, duplicar y eliminar CVs
+- Guardar múltiples CVs por usuario
+- Descargar como PDF
+- Compartir por link (futuro)
 
-Cambiar colores primarios/secundarios
+### Vista previa dinámica
+- Cambios reflejados en tiempo real
+- Cambio de plantilla sin pérdida de datos
 
-Tipografías (1-3 opciones por ahora)
+### Personalización
+- Temas (claro/oscuro)
+- Colores primarios/secundarios
+- Tipografía por plantilla
 
-Separación de secciones
+---
 
-Opción “Modo Oscuro” en la plantilla
+## Cómo levantar el proyecto (modo desarrollo)
 
-🧠 IA (futuro)
+1. Clona el repositorio:
 
-Redacción asistida de experiencia
+```bash
+git clone https://github.com/usuario/elevare-cv.git
+cd elevare-cv
+```
 
-Mejora de habilidades
-
-Revisión automática de ortografía o tono
-
-🖥 Dashboard del usuario
-
-Ver todos sus CVs
-
-Crear nuevo
-
-Editar/descargar
-
-Filtrar por fecha/plantilla/uso
-
-Personalizar interfaz (tema claro/oscuro, color primario, idioma)
+Levanta el entorno de desarrollo (necesita traefik):
+```bash
+./run.sh
+```
+**Nota:** La primera vez que levante el proyecto dira que no se encuentra archivo .env disponible, este se creará a partir de una copia de .env.example.
+Modificar unicamente el .env ya que el archivo .env.example es una plantilla fiel de .env
