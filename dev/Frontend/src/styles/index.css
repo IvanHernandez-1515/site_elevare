@@ -1,6 +1,32 @@
 /* src/styles/index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Puedes agregar aquí clases personalizadas si lo deseas */
+@theme {
+    /* Primarios */
+    --color-primary-DEFAULT: #3B82F6;
+    --color-primary-dark: #1E40AF;
+    --color-primary-light: #60A5FA;
+
+    /* Secundarios (CTAs) */
+    --color-secondary-DEFAULT: #FACC15;
+    --color-secondary-dark: #CA8A04;
+
+    /* Neutrales */
+    --color-neutral-light: #F9FAFB;
+    --color-neutral-dark: #111827;
+
+    /* Superficies (como colores para poder usarlas con bg-*, text-*, etc.) */
+    --color-surface-1: #0F172A;
+    /* header / mobile menu */
+    --color-surface-2: #0B1220;
+    /* secciones oscuras alternas */
+
+    /* Estados */
+    --color-success: #10B981;
+    --color-error: #EF4444;
+
+    /* Tipografías */
+    --font-family-heading: "Poppins", sans-serif;
+    --font-family-body: "Inter", sans-serif;
+}

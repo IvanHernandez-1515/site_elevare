@@ -11,7 +11,7 @@ services:
       - "traefik.http.routers.${CONTAINER_NAME}-frontend.rule=Host(`${TRAEFIK_FRONT_DOMAIN}`)"
       - "traefik.http.routers.${CONTAINER_NAME}-frontend.entrypoints=${TRAEFIK_ENTRYPOINT}"
       - "traefik.http.services.${CONTAINER_NAME}-frontend.loadbalancer.server.port=${FRONTEND_PORT_CONTAINER}"
-      # - "traefik.http.routers.${CONTAINER_NAME}-frontend.rule=Host(`${TRAEFIK_FRONT_DOMAIN}`) || HostRegexp(`{any:.*}`)"
+      - "traefik.http.routers.${CONTAINER_NAME}-frontend.rule=Host(`${TRAEFIK_FRONT_DOMAIN}`) || HostRegexp(`{any:.*}`)"
     volumes:
       - ${ROOT_PATH}${FRONTEND_LOCAL_PATH}:/app
       - /app/node_modules
