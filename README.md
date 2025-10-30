@@ -17,7 +17,7 @@ Convertirse en la herramienta líder para la creación de currículums en Améri
 ---
 
 ## Estructura general del proyecto
-
+```
 ├── conf
 │   ├── development
 │   │   └── docker-compose.yml
@@ -29,33 +29,53 @@ Convertirse en la herramienta líder para la creación de currículums en Améri
 │   │   │   └── configuration.js
 │   │   ├── index.js
 │   │   ├── node_modules
-│   │   ├── package-lock.json
 │   │   ├── package.json
+│   │   ├── package-lock.json
 │   │   └── src
 │   │       ├── routes
 │   │       │   ├── index.js
 │   │       │   └── initial.js
 │   │       └── server.js
 │   ├── Frontend
-│   │   ├── README.md
 │   │   ├── eslint.config.js
 │   │   ├── index.html
 │   │   ├── node_modules
-│   │   ├── package-lock.json
 │   │   ├── package.json
-│   │   ├── postcss.config.js
+│   │   ├── package-lock.json
 │   │   ├── public
 │   │   │   └── vite.svg
 │   │   ├── src
 │   │   │   ├── App.jsx
 │   │   │   ├── assets
+│   │   │   │   ├── images
+│   │   │   │   │   ├── home
+│   │   │   │   │   │   └── hero
+│   │   │   │   │   │       ├── foto-hero-1.avif
+│   │   │   │   │   │       └── foto-hero-2.avif
+│   │   │   │   │   └── pages
+│   │   │   │   │       └── icons
+│   │   │   │   │           └── logo-app.svg
 │   │   │   │   └── react.svg
-│   │   │   ├── index.css
+│   │   │   ├── components
+│   │   │   │   ├── common
+│   │   │   │   │   └── header
+│   │   │   │   │       └── HeaderHome.jsx
+│   │   │   │   ├── index.js
+│   │   │   │   ├── layouts
+│   │   │   │   │   └── home
+│   │   │   │   │       └── HomeLayout.jsx
+│   │   │   │   └── ui
+│   │   │   │       └── containers
+│   │   │   │           ├── Container.jsx
+│   │   │   │           └── ContainerLarge.jsx
 │   │   │   ├── main.jsx
 │   │   │   ├── pages
-│   │   │   │   └── Counter
-│   │   │   │       ├── Counter.css
-│   │   │   │       └── Counter.jsx
+│   │   │   │   ├── Counter
+│   │   │   │   │   ├── Counter.css
+│   │   │   │   │   ├── Counter.jsx
+│   │   │   │   │   └── index.css
+│   │   │   │   └── home
+│   │   │   │       └── Home.jsx
 │   │   │   ├── router
 │   │   │   │   └── AppRouter.jsx
 │   │   │   └── styles
@@ -68,11 +88,11 @@ Convertirse en la herramienta líder para la creación de currículums en Améri
 │   │   └── index.html
 │   └── migrations
 │       └── index.html
-│   ├── scripts
-│       └── permisos.sh
 ├── README.md
-└── run.sh
-
+├── run.sh
+└── scripts
+    └── permisos.sh
+```
 ---
 
 ## Descripción por módulo
@@ -115,7 +135,6 @@ Convertirse en la herramienta líder para la creación de currículums en Améri
   - MySQL 8
 
 - **DevOps**
-  - Docker
   - Docker Compose
   - Bash scripting
 
@@ -161,3 +180,54 @@ Levanta el entorno de desarrollo (necesita traefik):
 ```
 **Nota:** La primera vez que levante el proyecto dira que no se encuentra archivo .env disponible, este se creará a partir de una copia de .env.example.
 Modificar unicamente el .env ya que el archivo .env.example es una plantilla fiel de .env
+
+---
+
+## Guía de clases Tailwind (convención de orden)
+
+**Orden recomendado:**
+
+LAYOUT → POSITION → SIZE → SPACING → TYPO → COLOR → EFFECT → BORDER → MISC → RESPONSIVE
+
+Ejemplo real:
+```
+className="flex flex-col justify-center items-center relative w-full h-screen p-10 gap-6 font-sans text-4xl text-white bg-slate-700 shadow-xl rounded-xl hover:bg-slate-800 sm:text-center"
+```
+
+### Categorías comunes:
+
+- *Layout:* flex, grid, block, inline-flex, hidden
+
+- *osition:* relative, absolute, top-0, z-10
+
+- *Size:* w-64, h-10, max-w-7xl, aspect-[2/3]
+
+- *Spacing:* p-4, px-6, my-10, gap-x-4, space-y-6
+
+- *Typography:* font-sans, text-3xl, font-bold, tracking-tight, leading-relaxed
+
+- *Color:* text-slate-900, bg-slate-700, text-white, hover:bg-slate-800
+
+- *Effect:* shadow-xl, opacity-80, backdrop-blur
+
+- *Border:* rounded-md, border, border-slate-300
+
+- *Misc:* overflow-hidden, isolate, shrink-0
+
+- *Responsive:* sm:, md:, lg:, xl:
+
+### Consejos
+
+- Mantener este orden mejora la lectura y mantenimiento.
+- Usa clases personalizadas para consistencia institucional.
+- Combina gap con flex o grid para espaciado limpio.
+
+Si deseas ver ejemplos de implementación reales, revisa los componentes en src/pages/HomePage.jsx, donde se siguen estas reglas.
+
+Para cambiar de flex a grid, puedes seguir esta estructura:
+```
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div>Contenido 1</div>
+  <div>Contenido 2</div>
+</div>
+```
