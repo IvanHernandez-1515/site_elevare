@@ -11,11 +11,11 @@ services:
       - "traefik.http.routers.${CONTAINER_NAME}-frontend.rule=Host(`${TRAEFIK_FRONT_DOMAIN}`)"
       - "traefik.http.routers.${CONTAINER_NAME}-frontend.entrypoints=${TRAEFIK_ENTRYPOINT}"
       - "traefik.http.services.${CONTAINER_NAME}-frontend.loadbalancer.server.port=${FRONTEND_PORT_CONTAINER}"
-      - "traefik.http.routers.${CONTAINER_NAME}-frontend.rule=Host(`${TRAEFIK_FRONT_DOMAIN}`) || HostRegexp(`{any:.*}`)"
     volumes:
       - ${ROOT_PATH}${FRONTEND_LOCAL_PATH}:/app
       - /app/node_modules
-    command: sh -c "npm install && npm run dev -- --host"
+    command: >
+        sh -c "npm install && npm run dev -- --host 0.0.0.0 --port ${FRONTEND_PORT_CONTAINER}"
     # ports:
     #   - "${FRONTEND_PORT_LOCAL}:${FRONTEND_PORT_CONTAINER}"
     depends_on: 
