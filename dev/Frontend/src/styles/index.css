@@ -1,32 +1,33 @@
 /* src/styles/index.css */
 @import "tailwindcss";
 
-/* Puedes agregar aquí clases personalizadas si lo deseas */
 @theme {
-    /* Primarios */
-    --color-primary-DEFAULT: #3B82F6;
-    --color-primary-dark: #1E40AF;
-    --color-primary-light: #60A5FA;
+    /*primary*/
+    --color-elevare-primary: #2563EB;
+    --color-elevare-primary-light: #3B82F6;
+    --color-elevare-primary-dark: #1D4ED8;
 
-    /* Secundarios (CTAs) */
-    --color-secondary-DEFAULT: #FACC15;
-    --color-secondary-dark: #CA8A04;
+    /*secondary*/
+    --color-elevare-secondary: #7C3AED;
+    --color-elevare-secondary-light: #A78BFA;
 
-    /* Neutrales */
-    --color-neutral-light: #F9FAFB;
-    --color-neutral-dark: #111827;
+    /*neutral*/
+    --color-elevare-neutral-light: #F9FAFB;
+    --color-elevare-neutral-dark: #1F2937;
 
-    /* Superficies (como colores para poder usarlas con bg-*, text-*, etc.) */
-    --color-surface-1: #0F172A;
-    /* header / mobile menu */
-    --color-surface-2: #0B1220;
-    /* secciones oscuras alternas */
+    /*text*/
+    --color-elevare-text-main: #111827;
+    --color-elevare-text-muted: #6B7280;
 
-    /* Estados */
-    --color-success: #10B981;
-    --color-error: #EF4444;
+    /*feedback*/
+    --color-elevare-success: #10B981;
+    --color-elevare-error: #EF4444;
+    --color-elevare-warning: #F59E0B;
 
-    /* Tipografías */
-    --font-family-heading: "Poppins", sans-serif;
-    --font-family-body: "Inter", sans-serif;
+    /*accent*/
+    --color-elevare-accent: #E11D48;
+
+    /* === TIPOGRAFÍA === */
+    --font-elevare-sans: "Inter, ui-sans-serif, system-ui, sans-serif";
+    --font-elevare-heading: "Poppins, ui-sans-serif, system-ui, sans-serif";
 }
