@@ -4,7 +4,9 @@ export const HomeLayout = ({children}) => {
     return(
         <>
             <Header />
-            <main>{children}</main>
+            <main className="overflow-hidden">
+                {children}
+            </main>
         </>
 
     );
