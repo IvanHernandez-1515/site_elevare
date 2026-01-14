@@ -105,13 +105,13 @@ if [ "$todo" -eq $START ]; then
 	done
 
 	print_text_br "Levantando servicios con Docker Compose..." $GREEN
-	docker-compose --env-file "$ENV_FILE" --project-name "$PROJECT_NAME" -f "$DOCKERCOMPOSE_FILE" up -d --build
+	docker compose --env-file "$ENV_FILE" --project-name "$PROJECT_NAME" -f "$DOCKERCOMPOSE_FILE" up -d --build
 fi
 
 # Acción: detener proyecto
 if [ "$todo" -eq $STOP ]; then
 	print_text_br "Deteniendo y eliminando contenedores..." $YELLOW
-	docker-compose --env-file "$ENV_FILE" --project-name "$PROJECT_NAME" -f "$DOCKERCOMPOSE_FILE" down -v --remove-orphans
+	docker compose --env-file "$ENV_FILE" --project-name "$PROJECT_NAME" -f "$DOCKERCOMPOSE_FILE" down -v --remove-orphans
 fi
 
 # Acción: dar permisos

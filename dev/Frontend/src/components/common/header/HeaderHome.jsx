@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "@/assets/images/pages/icons/logo-app.svg";
+import logo from "@/assets/images/pages/icons/header/logo-app.svg";
 
 //components
 import { Container } from "../../ui/containers/Container";
@@ -8,42 +8,59 @@ export const Header = () => {
     return (
         <header className="py-8 bg-white">
             <Container>
-                <nav className="flex justify-between items-center">
+                <nav className="flex justify-between items-center" role="navigation" aria-label="Menú principal de navegación">
                     <div>
                         <a href="/" aria-label="Ir al inicio">
-                            <img src={logo} alt="Elevare CV logo" className="w-auto h-10"/>
+                            <img src={logo} alt="Logo de Elevare CV" className="w-auto h-10" />
                         </a>
                     </div>
-                    <div className="hidden justify-center gap-x-4 md:flex">
-                        <a href="#features" className="font-sans text-sm md:text-base text-elevare-text-main">
-                            <span className="p-2 rounded-lg hover:bg-elevare-neutral-light hover:text-slate-900 transition-colors duration-500 ease-in-out">
+
+                    <ul className="hidden justify-center gap-x-4 md:flex" role="list">
+                        <li>
+                            <a
+                                href="#features"
+                                className="font-sans text-sm md:text-base text-elevare-text-main p-2 hover:bg-elevare-neutral-light hover:text-elevare-primary rounded-lg transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-elevare-primary focus-visible:outline-offset-2"
+                            >
                                 Features
-                            </span>
-                        </a>
-                        <a href="#testimonials" className="font-sans text-sm md:text-base text-elevare-text-main">
-                            <span className="p-2 rounded-lg hover:bg-elevare-neutral-light hover:text-slate-900 transition-colors duration-500 ease-out">
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#testimonials"
+                                className="font-sans text-sm md:text-base text-elevare-text-main p-2 hover:bg-elevare-neutral-light hover:text-elevare-primary rounded-lg transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-elevare-primary focus-visible:outline-offset-2"
+                            >
                                 Testimonials
-                            </span>
-                        </a>
-                        <a href="#pricing" className="font-sans text-sm md:text-base text-elevare-text-main">
-                            <span className="p-2 rounded-lg hover:bg-elevare-neutral-light hover:text-slate-900 transition-color duration-500 ease-out">
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#pricing"
+                                className="font-sans text-sm md:text-base text-elevare-text-main p-2 hover:bg-elevare-neutral-light hover:text-elevare-primary rounded-lg transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-elevare-primary focus-visible:outline-offset-2"
+                            >
                                 Pricing
-                            </span>
-                        </a>
-                    </div>
+                            </a>
+                        </li>
+                    </ul>
                     <div className="flex justify-end items-center gap-x-3">
-                        <a href="/login" className="hidden md:inline-block font-sans text-slate-700">
-                            <span className="p-2 rounded-lg hover:bg-elevare-neutral-light transition-colors duration-500 ease-out">
-                                Sign in
-                            </span>
+                        <a
+                            href="/login"
+                            className="hidden md:inline-block font-sans text-elevare-text-muted p-2 hover:bg-elevare-neutral-light hover:text-elevare-primary rounded-lg transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-elevare-primary focus-visible:outline-offset-2"
+                        >
+                            Sign in
                         </a>
-                        <a href="/register" className="px-4 py-2 rounded-full font-sans font-semibold text-sm text-white bg-blue-600 hover:bg-blue-500 transition-color duration-500 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+                        <a 
+                            href="/register" 
+                            className="px-4 py-2 font-sans font-semibold text-sm md:text-base text-white bg-elevare-primary rounded-full hover:bg-elevare-primary-light transition-color duration-500 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-elevare-primary">
                             Get started <span className="hidden lg:inline">today</span>
                         </a>
-                        <button type="button" aria-label="Toggle Navigation" className="flex md:hidden items-center justify-center w-7 h-7">
+                        <button 
+                            type="button" 
+                            aria-label="Abrir Menú de navegación"
+                            className="flex md:hidden items-center justify-center w-7 h-7 focus-visible:outline-2 focus-visible:outline-elevare-primary focus-visible:outline-offset-2"
+                        >
                             <svg
                                 aria-hidden="true"
-                                className="h-4 w-4 stroke-slate-700"
+                                className="h-4 w-4 stroke-elevare-text-muted"
                                 fill="none"
                                 strokeWidth={2}
                                 strokeLinecap="round"

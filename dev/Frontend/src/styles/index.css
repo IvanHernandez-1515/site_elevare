@@ -30,4 +30,11 @@
     /* === TIPOGRAFÍA === */
     --font-elevare-sans: "Inter, ui-sans-serif, system-ui, sans-serif";
     --font-elevare-heading: "Poppins, ui-sans-serif, system-ui, sans-serif";
+
+    /*utilities*/
+    --color-features: oklch(93% .034 272.788);
+    --color-features-responsive: oklab(100% 0 5.96046e-8 / .1);
+    --color-tw-ring-color: #fff;
+
+    --skew-
 }
