@@ -43,16 +43,50 @@ const FeatureSection = () => {
                                 </dl>
                             </div>
                             <div>
-                                <div className="relative isolate bg-elevare-secondary">
-                                    <div className="absolute -inset-y-px -left-1 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-home opacity-20 ring ring-inset ring-white"></div>
-                                    <div className="max-w-2xl">
-                                        <img 
-                                            src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png" 
-                                            alt="Product Screenshot"  
-                                            className="w-4xl max-w-none rounded-tl-xl "
-                                        />
+                                <div class="mt-20 sm:mt-24 md:mx-auto md:max-w-[42rem] lg:w-screen lg:mt-0 lg:mx-0">
+                                    {/* <div class="
+                                        absolute inset-y-0 right-1/2
+                                        -z-10
+                                        w-[200%]
+                                        -skew-x-[30deg]
+                                        -mr-10
+                                        bg-[oklab(27.8%_-0.0075_-0.0321_/_0.3)]
+                                        ring-1 ring-[oklab(100%_0_0_/_0.05)]
+                                        shadow-xl shadow-[#7d87ff1a]
+                                        md:-mr-20
+                                        lg:-mr-36">
+                                    </div> */}
+                                    <div class="shadow-lg md:rounded-3xl">
+                                        <div class="
+                                        bg-[oklch(58.5%_.233_277.117)]
+                                        [clip-path:inset(0)]
+                                        md:[clip-path:inset(0_round_1.5rem)]">
+                                            <div class="
+                                            absolute
+                                            left-1/2
+                                            -inset-y-px
+                                            -z-10
+                                            ml-10
+                                            md:ml-20
+                                            lg:ml-36
+                                            w-[200%] 
+                                            -skew-x-[30deg] 
+                                            bg-[oklch(93%_.034_272.788)]
+                                            opacity-20 
+                                            ring-inset 
+                                            ring-1 
+                                            ring-white"></div>
+                                            <div className="
+                                            relative
+                                            px-6
+                                            pt-8
+                                            sm:pt-16
+                                            md:pl-16
+                                            md:pr-0">
+                                                
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="pointer-events-none absolute inset-0 bg-home ring-inset"></div>
                                 </div>
                             </div>
                         </div>

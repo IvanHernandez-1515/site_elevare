@@ -34,7 +34,5 @@
     /*utilities*/
     --color-features: oklch(93% .034 272.788);
     --color-features-responsive: oklab(100% 0 5.96046e-8 / .1);
-    --color-tw-ring-color: #fff;
-
-    --skew-
+    --color-tw-ring-color: #fff;   
 }
