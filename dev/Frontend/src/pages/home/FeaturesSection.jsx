@@ -9,13 +9,13 @@ const FeatureSection = () => {
                         <div className="grid md:grid-cols-2 gap-8 justify-center">
                             <div>
                                 <h3 className="text-sans font-semibold text-base text-elevare-primary mb-1">
-                                    Deploy faster
+                                    Currículums que evolucionan contigo
                                 </h3>
                                 <h2 className="font-sans font-semibold text-4xl tracking-tight text-pretty text-elevare-text-main mb-5">
-                                    A better workflow
+                                    Diseña, personaliza y controla tu perfil profesional
                                 </h2>
                                 <p className="font-sans text-lg text-elevare-text-main">
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+                                    Crea múltiples versiones de tu CV, cambia de plantilla en tiempo real y mantén todo en un solo lugar.
                                 </p>
                                 <dl className="mt-10">
                                     <div className="flex flex-row gap-x-3">
@@ -43,49 +43,15 @@ const FeatureSection = () => {
                                 </dl>
                             </div>
                             <div>
-                                <div class="mt-20 sm:mt-24 md:mx-auto md:max-w-[42rem] lg:w-screen lg:mt-0 lg:mx-0">
-                                    {/* <div class="
-                                        absolute inset-y-0 right-1/2
-                                        -z-10
-                                        w-[200%]
-                                        -skew-x-[30deg]
-                                        -mr-10
-                                        bg-[oklab(27.8%_-0.0075_-0.0321_/_0.3)]
-                                        ring-1 ring-[oklab(100%_0_0_/_0.05)]
-                                        shadow-xl shadow-[#7d87ff1a]
-                                        md:-mr-20
-                                        lg:-mr-36">
-                                    </div> */}
-                                    <div class="shadow-lg md:rounded-3xl">
-                                        <div class="
-                                        bg-[oklch(58.5%_.233_277.117)]
-                                        [clip-path:inset(0)]
-                                        md:[clip-path:inset(0_round_1.5rem)]">
-                                            <div class="
-                                            absolute
-                                            left-1/2
-                                            -inset-y-px
-                                            -z-10
-                                            ml-10
-                                            md:ml-20
-                                            lg:ml-36
-                                            w-[200%] 
-                                            -skew-x-[30deg] 
-                                            bg-[oklch(93%_.034_272.788)]
-                                            opacity-20 
-                                            ring-inset 
-                                            ring-1 
-                                            ring-white"></div>
-                                            <div className="
-                                            relative
-                                            px-6
-                                            pt-8
-                                            sm:pt-16
-                                            md:pl-16
-                                            md:pr-0">
-                                                
-                                            </div>
-                                        </div>
+                                <div className="relative isolate overflow-hidden bg-gray-800 px-6 py-8 shadow-2xl sm:rounded-3xl sm:px-16 sm:py-16 md:px-15 md:py-15">
+                                    <div className="relative h-80">
+                                        <img
+                                        alt="App screenshot"
+                                        src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
+                                        width={1824}
+                                        height={1080}
+                                        className="absolute top-0 left-0 w-228 max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
+                                        />
                                     </div>
                                 </div>
                             </div>
