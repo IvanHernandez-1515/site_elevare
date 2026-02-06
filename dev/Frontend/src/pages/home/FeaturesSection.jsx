@@ -42,8 +42,10 @@ const FeatureSection = () => {
                                     </div>
                                 </dl>
                             </div>
+                            
                             <div>
-                                <div className="relative isolate overflow-hidden bg-gray-800 px-6 py-8 shadow-2xl sm:rounded-3xl sm:px-16 sm:py-16 md:px-15 md:py-15">
+                                <div className="relative isolate overflow-hidden bg-elevare-secondary px-6 py-8 shadow-2xl sm:rounded-3xl sm:px-16 sm:py-16 md:px-15 md:py-15">
+                                        <div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-[oklch(93%_0.034_272.788)] shadow-xl ring-1 shadow-indigo-500/5 ring-white/5 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center opacity-30"></div>
                                     <div className="relative h-80">
                                         <img
                                         alt="App screenshot"
