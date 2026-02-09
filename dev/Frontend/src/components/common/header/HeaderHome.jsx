@@ -6,7 +6,7 @@ import { Container } from "../../ui/containers/Container";
 
 export const Header = () => {
     return (
-        <header className="py-8 bg-white">
+        <header className="py-8">
             <Container>
                 <nav className="flex justify-between items-center" role="navigation" aria-label="Menú principal de navegación">
                     <div>
