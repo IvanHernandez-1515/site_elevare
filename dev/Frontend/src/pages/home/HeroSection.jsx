@@ -3,11 +3,11 @@ import { Container } from "../../components";
 const HeroSection = () => {
     return (
         <>
-            <section role="region" aria-labelledby="hero-heading" className="my-10">
+            <section aria-labelledby="hero-heading" className="overflow-hidden my-5">
                 <Container>
                     <div className="px-3">
-                        <div className="md:flex md:flex-row md:gap-x-12 items-center">
-                            <div className="relative flex flex-col gap-8">
+                        <div className="md:flex md:gap-x-12 max-w-none items-center">
+                            <div className="relative flex shrink-0 flex-col gap-8 w-full md:max-w-xl">
                                 <h1 id="hero-heading" className="font-sans text-5xl md:text-7xl font-bold text-elevare-text-main text-pretty">
                                     We’re changing the way{" "}
                                     <span className="text-elevare-primary">people connect</span>
@@ -25,9 +25,8 @@ const HeroSection = () => {
                                     </button>
                                 </div>
                             </div>
-
-                            <div className="flex justify-center md:justify-start gap-x-8" aria-hidden="true">
-                                <div className="flex shrink-0 w-[11rem] items-center md:order-4 lg:order-1">
+                            <div className="flex justify-end sm:justify-center lg:justify-start gap-x-8" aria-hidden="true">
+                                <div className="flex shrink-0 w-[11rem] items-center md:order-last">
                                     <div className="relative">
                                         <img
                                             src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=400&h=528&q=80"
@@ -36,7 +35,7 @@ const HeroSection = () => {
                                         />
                                     </div>
                                 </div>
-                                <div className="flex flex-col justify-center shrink-0 w-[11rem] order-2 gap-y-8">
+                                <div className="flex flex-col justify-center shrink-0 w-[11rem] gap-y-8">
                                     <div className="relative">
                                         <img
                                             src="https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=400&h=256&q=80"
