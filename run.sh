@@ -32,6 +32,10 @@ print_text_br() {
 
 # Opciones de entorno
 DEVELOPMENT=1
+# Modo de desarrollo
+DEV_PORTS=1
+DEV_TRAEFIK=2
+
 QUALITY=2
 PRODUCTION=3
 
@@ -49,17 +53,37 @@ fi
 
 PATH_TO_CONFIG=""
 if [ "$enviroment_mode" -eq $DEVELOPMENT ]; then
-	PATH_TO_CONFIG="./conf/development/"
+  PATH_TO_CONFIG="./conf/development/"
+elif [ "$enviroment_mode" -eq $QUALITY ]; then
+  PATH_TO_CONFIG="./conf/quality/"
+else
+  PATH_TO_CONFIG="./conf/production/"
 fi
-if [ "$enviroment_mode" -eq $QUALITY ]; then
-	PATH_TO_CONFIG="./conf/quality/"
-fi
-if [ "$enviroment_mode" -eq $PRODUCTION ]; then
-	PATH_TO_CONFIG="./conf/production/"
-fi
-
-DOCKERCOMPOSE_FILE="${PATH_TO_CONFIG}docker-compose.yml"
+  
+DOCKERCOMPOSE_FILE=""
 ENV_FILE="${PATH_TO_CONFIG}.env"
+
+# Elegir compose según modo (solo en desarrollo)
+if [ "$enviroment_mode" -eq $DEVELOPMENT ]; then
+  print_text_br "Modo de desarrollo: ¿Cómo quieres levantar el proyecto?"
+  print_text " [\"$DEV_PORTS\"]: Con puertos (localhost)"
+  print_text " [\"$DEV_TRAEFIK\"]: Con Traefik (URL)"
+  read -p '> ' dev_mode
+  print_text ""
+
+  if [[ ! $dev_mode =~ ^[0-9]+$ ]] || [[ $dev_mode -lt 1 || $dev_mode -gt 2 ]]; then
+    print_text_br "Error: opción inválida." $RED
+    exit 1
+  fi
+
+  if [ "$dev_mode" -eq $DEV_PORTS ]; then
+    DOCKERCOMPOSE_FILE="${PATH_TO_CONFIG}docker-compose.ports.yml"
+  else
+    DOCKERCOMPOSE_FILE="${PATH_TO_CONFIG}docker-compose.traefik.yml"
+  fi
+else
+  DOCKERCOMPOSE_FILE="${PATH_TO_CONFIG}docker-compose.yml"
+fi
 
 # Verificar que el .env exista
 if [ ! -f "$ENV_FILE" ]; then
@@ -97,7 +121,7 @@ fi
 # Acción: iniciar proyecto
 if [ "$todo" -eq $START ]; then
 	print_text_br "Eliminando contenedores anteriores si existen..." $YELLOW
-	for container in ${FRONTEND_CONTAINER_NAME} ${BACKEND_CONTAINER_NAME} ${DB_CONTAINER_NAME}; do
+	for container in "${CONTAINER_NAME}_frontend" "${CONTAINER_NAME}_backend" "${CONTAINER_NAME}_db"; do
 		if docker ps -a --format '{{.Names}}' | grep -Eq "^${container}$"; then
 			print_text "Eliminando contenedor: $container" $RED
 			docker rm -f "$container" > /dev/null 2>&1
