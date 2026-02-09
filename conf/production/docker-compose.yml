@@ -48,8 +48,6 @@ services:
     image: mysql:8
     container_name: ${CONTAINER_NAME}_db
     restart: always
-    ports:
-      - "${DB_PORT_LOCAL}:${DB_PORT_CONTAINER}"
     volumes:
       - ${ROOT_PATH}${MYSQL_LOCAL_PATH}:/var/lib/mysql
       - ${ROOT_PATH}${VOLUME_CONF}:/etc/mysql/conf.d
@@ -62,7 +60,8 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     networks:
-        - ${TRAEFIK_NETWORK}
+      - ${TRAEFIK_NETWORK}
+
 networks:
   traefik_net:
     external: true

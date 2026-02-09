@@ -1,0 +1,66 @@
+services:
+  frontend:
+    image: node:20-alpine
+    container_name: ${CONTAINER_NAME}_frontend
+    working_dir: /app
+    volumes:
+      - ${ROOT_PATH}${FRONTEND_LOCAL_PATH}:/app
+      - /app/node_modules
+    command: >
+      sh -c "npm install && npm run dev -- --host 0.0.0.0 --port ${FRONTEND_PORT_CONTAINER}"
+    ports:
+      - "${FRONTEND_PORT_LOCAL}:${FRONTEND_PORT_CONTAINER}"
+    depends_on:
+      - ${BACKEND_SERVICE_NAME}
+    networks:
+      - ${TRAEFIK_NETWORK}
+
+  backend:
+    image: node:20-alpine
+    container_name: ${CONTAINER_NAME}_backend
+    working_dir: /app
+    volumes:
+      - ${ROOT_PATH}${BACKEND_LOCAL_PATH}:/app
+      - /app/node_modules
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0 --port ${BACKEND_PORT_CONTAINER}"
+    ports:
+      - "${BACKEND_PORT_LOCAL}:${BACKEND_PORT_CONTAINER}"
+    environment:
+      DB_HOST: ${DB_SERVICE_NAME}
+      DB_USER: ${MYSQL_USER}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_NAME: ${MYSQL_DATABASE}
+    depends_on:
+      - ${DB_SERVICE_NAME}
+    networks:
+      - ${TRAEFIK_NETWORK}
+
+  db:
+    image: mysql:8
+    container_name: ${CONTAINER_NAME}_db
+    restart: always
+    volumes:
+      - ${ROOT_PATH}${MYSQL_LOCAL_PATH}:/var/lib/mysql
+      - ${ROOT_PATH}${VOLUME_CONF}:/etc/mysql/conf.d
+      - ${ROOT_PATH}${VOLUME_MIGRATIONS}:/docker-entrypoint-initdb.d
+      - ${ROOT_PATH}${VOLUME_BACKUPS}:/backups
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      - ${TRAEFIK_NETWORK}
+  
+  adminer:
+    image: adminer
+    container_name: ${CONTAINER_NAME}_adminer
+    restart: 'no'
+    ports:
+      - ${PORT_GESTOR}:8080
+    networks:
+      - ${TRAEFIK_NETWORK}
+
+networks:
+  traefik_net:
+    external: true
