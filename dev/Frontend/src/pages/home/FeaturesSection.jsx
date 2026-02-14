@@ -48,7 +48,7 @@ const FeatureSection = () => {
                         <div>
                             <div className="sm:px-4">
                                 <div className="sm:px-3">
-                                    <div className="relative isolate overflow-hidden bg-elevare-secondary px-6 py-8 shadow-2xl sm:rounded-3xl sm:px-16 sm:py-16 md:px-15 md:py-15">
+                                    <div className="relative isolate overflow-hidden bg-elevare-primary-dark px-6 py-8 shadow-2xl sm:rounded-3xl sm:px-16 sm:py-16 md:px-15 md:py-15">
                                         <div
                                             aria-hidden="true"
                                             className="absolute inset-y-0 -z-10 w-full -left-1 origin-bottom-left -skew-x-30 bg-white/20 ring-inset inset-ring-white">
@@ -59,7 +59,11 @@ const FeatureSection = () => {
                                                 src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
                                                 width={2432}
                                                 height={1442}
-                                                className="-mb-32 w-4xl max-w-none rounded-xl"
+                                                className="
+                                                -mb-32 w-4xl max-w-none 
+                                                shadow-xl
+                                                ring-1 ring-white/10
+                                                rounded-xl"
                                             />
                                         </div>
                                     </div>

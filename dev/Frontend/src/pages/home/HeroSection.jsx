@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { Container } from "../../components";
 
 const HeroSection = () => {
@@ -9,20 +11,42 @@ const HeroSection = () => {
                         <div className="md:flex md:gap-x-12 max-w-none items-center">
                             <div className="relative flex shrink-0 flex-col gap-8 w-full md:max-w-xl">
                                 <h1 id="hero-heading" className="font-sans text-5xl md:text-7xl font-bold text-elevare-text-main text-pretty">
-                                    We’re changing the way{" "}
-                                    <span className="text-elevare-primary">people connect</span>
+                                    Tu próximo empleo{" "}
+                                    <span className="text-elevare-primary">empieza aquí</span>
                                 </h1>
                                 <p className="font-sans text-lg md:text-xl leading-7 tracking-tight text-elevare-text-muted text-pretty">
-                                    Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt.
+                                    Haz que tu experiencia se lea como una historia ganadora. En minutos, no en horas.
                                 </p>
-                                <div className="flex gap-x-4">
-                                    <button
-                                        className="font-sans text-base font-semibold text-white bg-elevare-primary px-4 py-2 rounded-md hover:bg-elevare-primary-light transition-color duration-500 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-elevare-primary"
+                                <div className="flex flex-wrap items-center gap-4">
+                                    <Link
+                                        to="/iniciar"
+                                        className="
+                                        font-sans text-base font-semibold text-white 
+                                        bg-elevare-primary 
+                                        px-4 py-2 rounded-md 
+                                        hover:bg-elevare-primary-light 
+                                        transition-color duration-500 ease-out 
+                                        focus-visible:outline-2 
+                                        focus-visible:outline-offset-2 
+                                        focus-visible:outline-elevare-primary"
                                         aria-label="Learn more about how Elevare CV works"
                                     >
-                                        Learn more{" "}
+                                        Comenzar ahora{" "}
                                         <span aria-hidden="true">→</span>
-                                    </button>
+                                    </Link>
+                                    <Link
+                                        to="/como-funciona"
+                                        className="
+                                        font-sans text-base font-semibold text-elevare-primary
+                                        px-4 py-2
+                                        transition-colors duration-300
+                                        rounded-md
+                                        hover:bg-elevare-primary/10
+                                        focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-elevare-primary"
+                                        aria-label="Ver cómo funciona Elevare CV"
+                                    >
+                                        Ver cómo funciona
+                                    </Link>
                                 </div>
                             </div>
                             <div className="flex justify-end sm:justify-center lg:justify-start gap-x-8" aria-hidden="true">
