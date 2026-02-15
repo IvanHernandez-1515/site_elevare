@@ -3,18 +3,21 @@ import { Container } from "../../components";
 
 const SolutionSection = () => {
     return (
-        <section aria-labelledby="solutions-heading" className="bg-elevare-neutral-light my-12">
+        <section aria-labelledby="solutions-heading" className="bg-elevare-neutral-light my-10">
             <Container>
-                <div className="px-3">
+                <div className="px-3 py-10">
                     <div className="text-center">
+                        <h3 className="text-sans font-semibold text-base text-elevare-primary mb-1">
+                            Una experiencia diferente
+                        </h3>
                         <h2
                             id="solutions-heading"
                             className="font-sans font-semibold text-3xl tracking-tight text-elevare-text-main sm:text-4xl"
                         >
-                            Hacer un buen currículum <span className="text-elevare-accent">no</span> debería ser complicado
+                            Crear un currículum debería sentirse simple.
                         </h2>
                         <p className="mt-3 text-base text-elevare-text-muted sm:text-lg">
-                            En Elevare CV, lo profesional y lo simple van juntos: organiza, adapta y presenta tu perfil con claridad.
+                            Diseñado para adaptarse a ti, no al revés.
                         </p>
                     </div>
 

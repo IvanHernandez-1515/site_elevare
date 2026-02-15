@@ -14,7 +14,6 @@ export const Header = () => {
                             <img src={logo} alt="Logo de Elevare CV" className="w-auto h-10" />
                         </a>
                     </div>
-
                     <ul className="hidden justify-center gap-x-4 md:flex" role="list">
                         <li>
                             <a

@@ -1,3 +1,8 @@
+//assets
+import eyeicon from "@/assets/images/pages/icons/home/feature/eye.svg";
+import versionicon from "@/assets/images/pages/icons/home/feature/versions.svg";
+import mosaicoicon from "@/assets/images/pages/icons/home/feature/mosaic.svg";
+
 import { ContainerLarge } from "../../components";
 
 const FeatureSection = () => {
@@ -20,24 +25,35 @@ const FeatureSection = () => {
                                     </p>
                                     <dl className="mt-10">
                                         <div className="flex gap-x-3">
-                                            <svg
-                                                viewBox="0 0 20 20"
-                                                fill="currentColor"
-                                                data-slot="icon"
-                                                aria-hidden="true"
-                                                className="size-7 text-elevare-secondary shrink-0">
-                                                <path
-                                                    d="M5.5 17a4.5 4.5 0 0 1-1.44-8.765 4.5 4.5 0 0 1 8.302-3.046 3.5 3.5 0 0 1 4.504 4.272A4 4 0 0 1 15 17H5.5Zm3.75-2.75a.75.75 0 0 0 1.5 0V9.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0l-3.25 3.5a.75.75 0 1 0 1.1 1.02l1.95-2.1v4.59Z" 
-                                                    clipRule="evenodd" 
-                                                    fillRule="evenodd"
-                                                ></path>
-                                            </svg>
-                                            <div className="inline">
+                                            <img className="size-7" src={eyeicon} alt="Vista previa en tiempo real" />
+                                            <div>
                                                 <dt className="font-sans font-semibold text-elevare-text-main">
-                                                    Push to deploy. {" "}
+                                                    Vista previa en tiempo real
                                                 </dt>
                                                 <dd className="font-sans text-elevare-text-muted">
-                                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+                                                    Observa cómo se verá tu currículum mientras lo editas. Sin sorpresas al exportar.
+                                                </dd>
+                                            </div>
+                                        </div>
+                                        <div className="flex gap-x-3 mt-6">
+                                            <img className="size-7" src={versionicon} alt="Versiones adaptadas por oportunidad" />
+                                            <div>
+                                                <dt className="font-sans font-semibold text-elevare-text-main">
+                                                    Versiones adaptadas por oportunidad
+                                                </dt>
+                                                <dd className="font-sans text-elevare-text-muted">
+                                                    Crea variaciones específicas sin duplicar archivos ni perder estructura.
+                                                </dd>
+                                            </div>
+                                        </div>
+                                        <div className="flex gap-x-3 mt-6">
+                                            <img className="size-7" src={mosaicoicon} alt="decide qué mostrar" />
+                                            <div>
+                                                <dt className="font-sans font-semibold text-elevare-text-main">
+                                                    Secciones que se activan o desactivan
+                                                </dt>
+                                                <dd className="font-sans text-elevare-text-muted">
+                                                    Decide qué mostrar según la vacante. Tu perfil se adapta contigo.
                                                 </dd>
                                             </div>
                                         </div>
@@ -48,7 +64,7 @@ const FeatureSection = () => {
                         <div>
                             <div className="sm:px-4">
                                 <div className="sm:px-3">
-                                    <div className="relative isolate overflow-hidden bg-elevare-primary-dark px-6 py-8 shadow-2xl sm:rounded-3xl sm:px-16 sm:py-16 md:px-15 md:py-15">
+                                    <div className="relative isolate overflow-hidden bg-elevare-secondary px-6 py-8 shadow-2xl sm:rounded-3xl sm:px-16 sm:py-16 md:px-15 md:py-15">
                                         <div
                                             aria-hidden="true"
                                             className="absolute inset-y-0 -z-10 w-full -left-1 origin-bottom-left -skew-x-30 bg-white/20 ring-inset inset-ring-white">

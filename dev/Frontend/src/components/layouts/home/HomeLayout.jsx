@@ -1,4 +1,5 @@
 import {Header} from "../../common/header/HeaderHome";
+import {Footer} from "../../common/footer/FooterHome";
 
 export const HomeLayout = ({children}) => {
     return(
@@ -7,6 +8,7 @@ export const HomeLayout = ({children}) => {
             <main>
                 {children}
             </main>
+            <Footer />
         </>
 
     );

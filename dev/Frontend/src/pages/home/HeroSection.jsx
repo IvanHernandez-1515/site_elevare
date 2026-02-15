@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 
+//components
 import { Container } from "../../components";
 
 const HeroSection = () => {
     return (
         <>
-            <section aria-labelledby="hero-heading" className="overflow-hidden my-5">
+            <section aria-labelledby="hero-heading" className="overflow-hidden mt-5">
                 <Container>
                     <div className="px-3">
                         <div className="md:flex md:gap-x-12 max-w-none items-center">
