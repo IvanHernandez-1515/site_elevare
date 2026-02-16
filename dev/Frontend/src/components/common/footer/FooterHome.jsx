@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 
 //assets
-import logo from "@/assets/images/pages/icons/header/logo-app.svg";
-import logoX from "@/assets/images/pages/icons/footer/logo-x.svg";
-import logoGit from "@/assets/images/pages/icons/footer/logo-git.svg";
+import logo from "@/assets/images/pages/icons/general/logo-appv1.svg";
+import logoFace from "@/assets/images/pages/icons/general/logo-facebook.svg";
+import logoInsta from "@/assets/images/pages/icons/general/logo-instagram.svg";
+import logoX from "@/assets/images/pages/icons/general/logo-x.svg";
+import logoGit from "@/assets/images/pages/icons/general/logo-git.svg";
 
 //components
 import { Container } from "../../ui/containers/Container";
@@ -36,6 +38,38 @@ export const Footer = () => {
                     <div className="mt-10 flex flex-col items-center gap-6 border-t border-slate-400/10 pt-10 sm:flex-row-reverse sm:justify-between sm:gap-4">
                         <nav aria-label="Redes sociales" className="flex items-center gap-x-3">
                             <a
+                                href="https://facebook.com/"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center justify-center rounded-lg transition hover:bg-elevare-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary focus-visible:ring-offset-2 focus-visible:ring-offset-elevare-neutral-light"
+                                aria-label="Abrir Facebook en una pestaña nueva"
+                            >
+                                <img
+                                    src={logoFace}
+                                    alt="Logo de Facebook"
+                                    aria-hidden="true"
+                                    className="h-6 w-6"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </a>
+                            <a
+                                href="https://instagram.com/"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center justify-center rounded-lg transition hover:bg-elevare-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary focus-visible:ring-offset-2 focus-visible:ring-offset-elevare-neutral-light"
+                                aria-label="Abrir Instagram en una pestaña nueva"
+                            >
+                                <img
+                                    src={logoInsta}
+                                    alt="Logo de Insta"
+                                    aria-hidden="true"
+                                    className="h-6 w-6"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </a>
+                            <a
                                 href="https://x.com/"
                                 target="_blank"
                                 rel="noreferrer"
@@ -44,7 +78,7 @@ export const Footer = () => {
                             >
                                 <img
                                     src={logoX}
-                                    alt=""
+                                    alt="Logo de X"
                                     aria-hidden="true"
                                     className="h-6 w-6"
                                     loading="lazy"
@@ -60,7 +94,7 @@ export const Footer = () => {
                             >
                                 <img
                                     src={logoGit}
-                                    alt=""
+                                    alt="Logo de Github"
                                     aria-hidden="true"
                                     className="h-6 w-6"
                                     loading="lazy"

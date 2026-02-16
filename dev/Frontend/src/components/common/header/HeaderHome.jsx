@@ -1,5 +1,7 @@
-import React from "react";
-import logo from "@/assets/images/pages/icons/header/logo-app.svg";
+import {Link} from "react-router-dom";
+
+//assets
+import logov1 from "@/assets/images/pages/icons/general/logo-appv1.svg";
 
 //components
 import { Container } from "../../ui/containers/Container";
@@ -10,9 +12,9 @@ export const Header = () => {
             <Container>
                 <nav className="flex justify-between items-center" role="navigation" aria-label="Menú principal de navegación">
                     <div>
-                        <a href="/" aria-label="Ir al inicio">
-                            <img src={logo} alt="Logo de Elevare CV" className="w-auto h-10" />
-                        </a>
+                        <Link to="/" aria-label="Ir al inicio">
+                            <img src={logov1} alt="Logo de Elevare CV" className="w-auto h-10" />
+                        </Link>
                     </div>
                     <ul className="hidden justify-center gap-x-4 md:flex" role="list">
                         <li>
@@ -41,17 +43,17 @@ export const Header = () => {
                         </li>
                     </ul>
                     <div className="flex justify-end items-center gap-x-3">
-                        <a
-                            href="/login"
+                        <Link
+                            to="/iniciar-sesion"
                             className="hidden md:inline-block font-sans text-elevare-text-muted p-2 hover:bg-elevare-neutral-light hover:text-elevare-primary rounded-lg transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-elevare-primary focus-visible:outline-offset-2"
                         >
-                            Sign in
-                        </a>
-                        <a 
-                            href="/register" 
+                            Iniciar sesión
+                        </Link>
+                        <Link
+                            to="/register" 
                             className="px-4 py-2 font-sans font-semibold text-sm md:text-base text-white bg-elevare-primary rounded-full hover:bg-elevare-primary-light transition-color duration-500 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-elevare-primary">
-                            Get started <span className="hidden lg:inline">today</span>
-                        </a>
+                            Crear mi CV <span aria-hidden="true">→</span>
+                        </Link>
                         <button 
                             type="button" 
                             aria-label="Abrir Menú de navegación"

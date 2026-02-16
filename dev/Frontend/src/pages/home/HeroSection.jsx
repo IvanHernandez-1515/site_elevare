@@ -20,7 +20,7 @@ const HeroSection = () => {
                                 </p>
                                 <div className="flex flex-wrap items-center gap-4">
                                     <Link
-                                        to="/iniciar"
+                                        to="/registrarse"
                                         className="
                                         font-sans text-base font-semibold text-white 
                                         bg-elevare-primary 

@@ -15,7 +15,7 @@ const HomePage = () => {
                 <ProblemSection />
                 <SolutionSection />
                 <FeatureSection />
-                <DifferenceProduct />
+                {/* <DifferenceProduct /> */}
             </HomeLayout>
         </>
     );
