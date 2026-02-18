@@ -14,7 +14,7 @@ const RegisterForm = () => {
         <AuthLayout>
             <ContainerCustom>
                 <div className="px-3 my-10">
-                    <div className="grid items-center gap-10 lg:grid-cols-2">
+                    <div className="grid items-center gap-10 lg:grid-cols-2 max-w-6xl w-full">
                         <div className="flex flex-col gap-6">
                             <div>
                                 <p className="font-sans font-semibold text-sm text-elevare-primary">
