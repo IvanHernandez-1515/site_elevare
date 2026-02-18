@@ -41,7 +41,7 @@ export const Footer = () => {
                                 href="https://facebook.com/"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="inline-flex items-center justify-center rounded-lg transition hover:bg-elevare-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary focus-visible:ring-offset-2 focus-visible:ring-offset-elevare-neutral-light"
+                                className="inline-flex items-center justify-center rounded-lg transition hover:bg-elevare-seconda/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary focus-visible:ring-offset-2 focus-visible:ring-offset-elevare-neutral-light"
                                 aria-label="Abrir Facebook en una pestaña nueva"
                             >
                                 <img
@@ -57,7 +57,7 @@ export const Footer = () => {
                                 href="https://instagram.com/"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="inline-flex items-center justify-center rounded-lg transition hover:bg-elevare-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary focus-visible:ring-offset-2 focus-visible:ring-offset-elevare-neutral-light"
+                                className="inline-flex items-center justify-center rounded-lg transition hover:bg-elevare-secondary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-elevare-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-elevare-neutral-light"
                                 aria-label="Abrir Instagram en una pestaña nueva"
                             >
                                 <img

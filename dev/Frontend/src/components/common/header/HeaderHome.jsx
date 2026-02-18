@@ -50,7 +50,7 @@ export const Header = () => {
                             Iniciar sesión
                         </Link>
                         <Link
-                            to="/register" 
+                            to="/registrarse" 
                             className="px-4 py-2 font-sans font-semibold text-sm md:text-base text-white bg-elevare-primary rounded-full hover:bg-elevare-primary-light transition-color duration-500 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-elevare-primary">
                             Crear mi CV <span aria-hidden="true">→</span>
                         </Link>
