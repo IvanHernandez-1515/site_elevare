@@ -1,7 +1,7 @@
 export const AuthLayout = ({children}) => {
     return(
         <>
-            <main>
+            <main className="bg-elevare-neutral-light">
                 {children}
             </main>
         </>
