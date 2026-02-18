@@ -21,7 +21,7 @@ const SolutionSection = () => {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 items-stretch gap-4 my-10 md:grid-cols-4">
+                    <div className="grid items-stretch gap-4 my-10 lg:grid-cols-4">
                         <button
                             type="button"
                             aria-label="Un CV diferente para cada vacante"

@@ -8,25 +8,26 @@ import { AuthLayout } from "../../components";
 
 //components
 import { ContainerCustom } from "../../components";
-const LoginForm = () => {
-    return (
+
+const RegisterForm = () => {
+    return(
         <AuthLayout>
             <ContainerCustom>
                 <div className="px-3 my-10">
-                    <div className="grid items-center gap-10 lg:grid-cols-2 max-w-6xl w-full">
+                    <div className="grid items-center gap-10 lg:grid-cols-2">
                         <div className="flex flex-col gap-6">
                             <div>
                                 <p className="font-sans font-semibold text-sm text-elevare-primary">
-                                    Bienvenido de vuelta
+                                    Primer paso
                                 </p>
                                 <h1 id="auth-heading" className="font-sans font-bold text-4xl leading-tight tracking-tight text-elevare-text-main sm:text-5xl mt-2">
-                                    Tu próximo empleo empieza aquí
+                                    Crea tu perfil en minutos
                                 </h1>
                                 <p className="font-sans text-base leading-7 text-elevare-text-muted sm:text-lg mt-3">
-                                    Entra y retoma tu CV justo donde lo dejaste: claro, ordenado y listo para enviar.
+                                    Empieza con una base sólida y crea versiones para cada oportunidad, sin rehacerlo todo.
                                 </p>
                                 <p className="font-sans text-sm text-elevare-text-muted mt-3">
-                                    Tu información se mantiene privada y segura.
+                                    Sin tarjeta. Puedes cambiar todo después.
                                 </p>
                             </div>
                             <div className="bg-white/70 ring-1 ring-black/5 p-6 rounded-3xl">
@@ -62,10 +63,10 @@ const LoginForm = () => {
                                 <div className="flex items-start justify-between gap-4">
                                     <div>
                                         <h2 className="font-sans font-semibold text-xl text-elevare-text-main">
-                                            Iniciar sesión
+                                            Crear cuenta
                                         </h2>
                                         <p className="font-sans text-sm text-elevare-text-muted mt-1">
-                                            Accede a tu cuenta para seguir editando tu perfil.
+                                            Crea tu cuenta y empieza tu perfil base.
                                         </p>
                                     </div>
                                     <span className="bg-elevare-secondary/10 px-3 py-1 shrink-0 rounded-full font-sans text-xs text-elevare-secondary">
@@ -77,6 +78,19 @@ const LoginForm = () => {
                                         e.preventDefault();
                                     }}
                                 >
+                                    <div>
+                                        <label htmlFor="name" className="font-sans text-sm font-medium text-elevare-text-main">
+                                            Nombre
+                                        </label>
+                                        <input
+                                            id="name"
+                                            name="name"
+                                            type="text"
+                                            autoComplete="name"
+                                            placeholder="Tu nombre"
+                                            className="block w-full mt-2 px-4 py-3 font-sans text-base text-elevare-text-main bg-white rounded-xl ring-1 ring-black/10 placeholder:text-elevare-text-muted/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary/40"
+                                        />
+                                    </div>
                                     <div>
                                         <label htmlFor="email" className="font-sans font-medium text-sm text-elevare-text-main">
                                             Correo electrónico
@@ -92,34 +106,32 @@ const LoginForm = () => {
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="password" className="font-sans font-medium text-sm text-elevare-text-main">
+                                        <label htmlFor="password" className="font-sans text-sm font-medium text-elevare-text-main">
                                             Contraseña
                                         </label>
                                         <input
                                             id="password"
                                             name="password"
                                             type="password"
-                                            autoComplete="current-password"
+                                            autoComplete="new-password"
                                             placeholder="••••••••"
                                             required
-                                            className="bg-white rounded-xl ring-1 ring-black/10 block w-full mt-2 px-4 py-3 font-sans text-base text-elevare-text-main placeholder:text-elevare-text-muted/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary/40"
+                                            className="block w-full mt-2 px-4 py-3 font-sans text-base text-elevare-text-main bg-white rounded-xl ring-1 ring-black/10 placeholder:text-elevare-text-muted/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary/40"
                                         />
                                     </div>
-                                    <div className="flex justify-between">
-                                        <label className="font-sans text-sm text-elevare-text-muted inline-flex items-center gap-2">
-                                            <input
-                                                type="checkbox"
-                                                name="remember"
-                                                className="text-elevare-primary h-4 w-4 rounded border-black/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary/40"
-                                            />
-                                            Recordarme
+                                    <div>
+                                        <label htmlFor="confirmPassword" className="font-sans text-sm font-medium text-elevare-text-main">
+                                            Confirmar contraseña
                                         </label>
-                                        <Link
-                                            to="/recuperar"
-                                            className="font-sans font-semibold text-sm text-elevare-primary hover:text-elevare-primary-light focus:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded"
-                                        >
-                                            ¿Olvidaste tu contraseña?
-                                        </Link>
+                                        <input
+                                            id="confirmPassword"
+                                            name="confirmPassword"
+                                            type="password"
+                                            autoComplete="new-password"
+                                            placeholder="••••••••"
+                                            required
+                                            className="block w-full mt-2 px-4 py-3 font-sans text-base text-elevare-text-main bg-white rounded-xl ring-1 ring-black/10 placeholder:text-elevare-text-muted/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary/40"
+                                        />
                                     </div>
                                     <button
                                         type="submit"
@@ -146,12 +158,12 @@ const LoginForm = () => {
                                     </button>
                                     <div className="pt-2">
                                         <p className="font-sans text-sm text-elevare-text-muted">
-                                            ¿No tienes cuenta?{" "}
+                                            ¿Ya tienes cuenta?{" "}
                                             <Link
-                                                to="/registrarse"
+                                                to="/iniciar-sesion"
                                                 className="font-sans font-semibold text-elevare-primary hover:text-elevare-primary-light focus:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded"
                                             >
-                                                Crear una
+                                                Iniciar sesión
                                             </Link>
                                         </p>
                                     </div>
@@ -166,5 +178,5 @@ const LoginForm = () => {
             </ContainerCustom>
         </AuthLayout>
     );
-};
-export default LoginForm;
+}
+export default RegisterForm;

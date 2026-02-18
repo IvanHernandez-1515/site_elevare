@@ -3,13 +3,13 @@ import eyeicon from "@/assets/images/pages/icons/home/feature/eye.svg";
 import versionicon from "@/assets/images/pages/icons/home/feature/versions.svg";
 import mosaicoicon from "@/assets/images/pages/icons/home/feature/mosaic.svg";
 
-import { ContainerLarge } from "../../components";
+import { ContainerExpandMobile } from "../../components";
 
 const FeatureSection = () => {
     return(
         <>
             <section aria-labelledby="feature-heading" className="overflow-hidden my-10">
-                <ContainerLarge>
+                <ContainerExpandMobile>
                     <div className="grid grid-cols-1 gap-8 lg:items-start lg:grid-cols-2">
                         <div>
                             <div className="px-4">
@@ -87,7 +87,7 @@ const FeatureSection = () => {
                             </div>
                         </div>
                     </div>
-                </ContainerLarge>
+                </ContainerExpandMobile>
             </section>
         </>
     );

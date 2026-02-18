@@ -9,7 +9,7 @@ const HeroSection = () => {
             <section aria-labelledby="hero-heading" className="overflow-hidden mt-5">
                 <Container>
                     <div className="px-3">
-                        <div className="md:flex md:gap-x-12 max-w-none items-center">
+                        <div className="lg:flex lg:gap-x-12 max-w-none items-center">
                             <div className="relative flex shrink-0 flex-col gap-8 w-full md:max-w-xl">
                                 <h1 id="hero-heading" className="font-sans text-5xl md:text-7xl font-bold text-elevare-text-main text-pretty">
                                     Tu próximo empleo{" "}
