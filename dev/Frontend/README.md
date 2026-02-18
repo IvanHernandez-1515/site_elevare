@@ -58,11 +58,18 @@
 │   │   │           ├── Container.jsx
 │   │   │           ├── ContainerCustom.jsx
 │   │   │           └── ContainerExpandMobile.jsx
-│   │   ├── pages/
+│   │   ├── features/
 │   │   │   ├── auth/
 │   │   │   │   ├── ForgotPass.jsx
 │   │   │   │   ├── LoginForm.jsx
-│   │   │   │   └── RegisterForm.jsx
+│   │   │   │   └── register/
+│   │   │   │        ├── ui/
+│   │   │   │          ├── RegisterPage.jsx
+│   │   │   │          └── RegisterForm.jsx
+│   │   │   │        ├── schemas/
+│   │   │   │          └── register.schema.js
+│   │   │   │        ├── service/
+│   │   │   │          └── register.service.js
 │   │   │   ├── Counter/
 │   │   │   │   ├── Counter.css
 │   │   │   │   ├── Counter.jsx
