@@ -6,7 +6,8 @@ export * from "./common/footer/FooterHome";
 
 //ui
 export * from "./ui/containers/Container";
-export * from "./ui/containers/ContainerLarge";
+export * from "./ui/containers/ContainerExpandMobile";
+export * from "./ui/containers/ContainerCustom";
 
 //layouts
 export * from "./layouts/home/HomeLayout";
