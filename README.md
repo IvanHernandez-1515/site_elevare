@@ -14,74 +14,60 @@ Facilitar la generación de currículums vitae mediante una plataforma tecnológ
 
 Convertirse en la herramienta líder para la creación de currículums en América Latina, promoviendo la empleabilidad a través del diseño inteligente, la accesibilidad y el uso de tecnologías modernas.
 
+## Propuesta de valor
+
+Elevare CV transforma tu experiencia en una presentación estratégica, adaptable y profesional para cada oportunidad.
+
 ---
 
 ## Estructura general del proyecto
 ```
 ├── conf
 │   ├── development
-│   │   └── docker-compose.yml
+│   │   ├── .env
+│   │   ├── .env.example
+│   │   ├── docker-compose.ports.yml
+│   │   └── docker-compose.traefik.yml
 │   └── production
+│       ├── .env.example
 │       └── docker-compose.yml
 ├── dev
 │   ├── Backend
-│   │   ├── conf
-│   │   │   └── configuration.js
-│   │   ├── index.js
-│   │   ├── node_modules
-│   │   ├── package.json
-│   │   ├── package-lock.json
-│   │   └── src
-│   │       ├── routes
-│   │       │   ├── index.js
-│   │       │   └── initial.js
-│   │       └── server.js
-│   ├── Frontend
-│   │   ├── eslint.config.js
-│   │   ├── index.html
-│   │   ├── node_modules
-│   │   ├── package.json
-│   │   ├── package-lock.json
-│   │   ├── public
-│   │   │   └── vite.svg
-│   │   ├── src
-│   │   │   ├── App.jsx
-│   │   │   ├── assets
-│   │   │   │   ├── images
-│   │   │   │   │   ├── home
-│   │   │   │   │   │   └── hero
-│   │   │   │   │   │       ├── foto-hero-1.avif
-│   │   │   │   │   │       └── foto-hero-2.avif
+│   │   ├── conf/
+│   │   ├── node_modules/
+│   │   └── src/
+│   │       ├── routes/
+├   ├── Frontend
+│   │   ├── node_modules/
+│   │   ├── public/
+│   │   │   ├── assets/
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   │   ├── images/
+│   │   │   │   │   ├── home/
+│   │   │   │   │   │   └── hero/
 │   │   │   │   │   └── pages
-│   │   │   │   │       └── icons
-│   │   │   │   │           └── logo-app.svg
-│   │   │   │   └── react.svg
-│   │   │   ├── components
-│   │   │   │   ├── common
-│   │   │   │   │   └── header
-│   │   │   │   │       └── HeaderHome.jsx
-│   │   │   │   ├── index.js
-│   │   │   │   ├── layouts
-│   │   │   │   │   └── home
-│   │   │   │   │       └── HomeLayout.jsx
-│   │   │   │   └── ui
-│   │   │   │       └── containers
-│   │   │   │           ├── Container.jsx
-│   │   │   │           └── ContainerLarge.jsx
-│   │   │   ├── main.jsx
-│   │   │   ├── pages
-│   │   │   │   ├── Counter
-│   │   │   │   │   ├── Counter.css
-│   │   │   │   │   ├── Counter.jsx
-│   │   │   │   │   └── index.css
-│   │   │   │   └── home
-│   │   │   │       └── Home.jsx
-│   │   │   ├── router
-│   │   │   │   └── AppRouter.jsx
-│   │   │   └── styles
-│   │   │       └── index.css
-│   │   ├── tailwind.config.js
-│   │   └── vite.config.js
+│   │   │   │   │       └── icons/
+│   │   │   │   │       │    ├── Auth/
+│   │   │   │   │       │    │    └── Login/
+│   │   │   │   │       │    ├── general/
+│   │   │   │   │       │    ├── home/
+│   │   │   │   │       │    │    └── feature/
+│   │   │   ├── components/
+│   │   │   │   ├── common/
+│   │   │   │   │   ├── header/
+│   │   │   │   │   └── footer/
+│   │   │   │   ├── layouts/
+│   │   │   │   │   ├── auth/
+│   │   │   │   │   └── home/
+│   │   │   │   └── ui/
+│   │   │   │       └── containers/
+│   │   │   ├── pages/
+│   │   │   │   ├── auth/
+│   │   │   │   ├── Counter/
+│   │   │   │   └── home/
+│   │   │   ├── router/
+│   │       └── styles/
 │   └── index.html
 ├── mysql
 │   ├── backups
