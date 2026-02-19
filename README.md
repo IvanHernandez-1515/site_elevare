@@ -29,15 +29,16 @@ Elevare CV transforma tu experiencia en una presentación estratégica, adaptabl
 │   │   ├── docker-compose.ports.yml
 │   │   └── docker-compose.traefik.yml
 │   └── production
-│       ├── .env.example
-│       └── docker-compose.yml
+│   │   ├── .env.example
+│   │   └── docker-compose.yml
 ├── dev
 │   ├── Backend
 │   │   ├── conf/
 │   │   ├── node_modules/
 │   │   └── src/
-│   │       ├── routes/
+│   │       └── routes/
 ├   ├── Frontend
+│   │   ├── env/
 │   │   ├── node_modules/
 │   │   ├── public/
 │   │   │   ├── assets/
@@ -47,12 +48,12 @@ Elevare CV transforma tu experiencia en una presentación estratégica, adaptabl
 │   │   │   │   │   ├── home/
 │   │   │   │   │   │   └── hero/
 │   │   │   │   │   └── pages
-│   │   │   │   │       └── icons/
-│   │   │   │   │       │    ├── Auth/
-│   │   │   │   │       │    │    └── Login/
-│   │   │   │   │       │    ├── general/
-│   │   │   │   │       │    ├── home/
-│   │   │   │   │       │    │    └── feature/
+│   │   │   │   │   │    └── icons/
+│   │   │   │   │   │    │    ├── Auth/
+│   │   │   │   │   │    │    │    └── Login/
+│   │   │   │   │   │    │    ├── general/
+│   │   │   │   │   │    │    ├── home/
+│   │   │   │   │   │    │    │    └── feature/
 │   │   │   ├── components/
 │   │   │   │   ├── common/
 │   │   │   │   │   ├── header/
@@ -61,27 +62,36 @@ Elevare CV transforma tu experiencia en una presentación estratégica, adaptabl
 │   │   │   │   │   ├── auth/
 │   │   │   │   │   └── home/
 │   │   │   │   └── ui/
-│   │   │   │       └── containers/
-│   │   │   ├── pages/
+│   │   │   │   │    ├── card/
+│   │   │   │   │    └── containers/
+│   │   │   ├── config/
+│   │   │   ├── features/
 │   │   │   │   ├── auth/
+│   │   │   │   │    ├── register/
+│   │   │   │   │    │    ├── schema/
+│   │   │   │   │    │    ├── service/
+│   │   │   │   │    │    └── ui/
 │   │   │   │   ├── Counter/
 │   │   │   │   └── home/
 │   │   │   ├── router/
-│   │       └── styles/
-│   └── index.html
-├── mysql
-│   ├── backups
+│   │   │   ├── shared/
+│   │   │   │   └── lib/
+│   │   │   └── styles/
+├── mysql/
+│   ├── backups/
 │   │   └── index.html
-│   └── migrations
+│   └── migrations/
 │       └── index.html
+├── scripts/
+│    └── permisos.sh
 ├── README.md
-├── run.sh
-└── scripts
-    └── permisos.sh
+└── run.sh
 ```
 ---
 
 ## Descripción por módulo
+arquitectura
+Layered / N-Tier
 
 ### Backend (Node.js + Express)
 - API REST para autenticación y gestión de currículums.

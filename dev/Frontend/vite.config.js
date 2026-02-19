@@ -16,13 +16,11 @@ export default defineConfig({
     },
   },
   server: {
-    allowedHosts: ["elevare.development"],
-
     proxy: {
-      "/api": {
-        target: "http://localhost:3000", //donde corre tu backend
+      '/api': {
+        target: 'http://localhost:3000',
         changeOrigin: true,
-        secure: false,
+        // rewrite: (path) => path.replace(/^\/api/, '/api'), // normalmente ni se necesita
       },
     },
   },
