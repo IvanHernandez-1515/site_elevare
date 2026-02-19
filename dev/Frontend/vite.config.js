@@ -9,12 +9,21 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  envDir: "./env", // <-- aquí le dices a Vite que lea Frontend/env/
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
   },
   server: {
-    allowedHosts: ['elevare.development'],
+    allowedHosts: ["elevare.development"],
+
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000", //donde corre tu backend
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
 })

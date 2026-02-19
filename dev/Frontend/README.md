@@ -3,9 +3,12 @@
 ├── Frontend
 │   ├── eslint.config.js
 │   ├── index.html
-│   ├── node_modules/
 │   ├── package.json
 │   ├── package-lock.json
+│   ├── env/
+│   │   ├── .env.development
+│   │   └── .env.production
+│   ├── node_modules/
 │   ├── public/
 │   │   ├── vite.svg
 │   │   ├── assets/
@@ -13,13 +16,16 @@
 │   ├── src
 │   │   ├── main.jsx
 │   │   ├── App.jsx
-│   │   ├── assets
-│   │   │   ├── images
-│   │   │   │   ├── home
-│   │   │   │   │   └── hero
+│   │   ├── shared/
+│   │   │   ├── lib/
+│   │   │       └── validators.js
+│   │   ├── assets/
+│   │   │   ├── images/
+│   │   │   │   ├── home/
+│   │   │   │   │   └── hero/
 │   │   │   │   │       ├── foto-hero-1.avif
 │   │   │   │   │       └── foto-hero-2.avif
-│   │   │   │   └── pages
+│   │   │   │   └── pages/
 │   │   │   │       └── icons/
 │   │   │   │       │    ├── Auth/
 │   │   │   │       │    │    └── Login
@@ -41,20 +47,20 @@
 │   │   │   │       │    │    │   ├── upload.svg
 │   │   │   │       │    │        └── versions.svg
 │   │   │   └── react.svg
-│   │   ├── components
+│   │   ├── components/
 │   │   │   ├── index.js
 │   │   │   ├── common/
-│   │   │   │   ├── header
+│   │   │   │   ├── header/
 │   │   │   │   │   └── HeaderHome.jsx
-│   │   │   │   └── footer
+│   │   │   │   └── footer/
 │   │   │   │       └── FooterHome.jsx
 │   │   │   ├── layouts/
-│   │   │   │   ├── auth
+│   │   │   │   ├── auth/
 │   │   │   │   │   └── AuthLayout.jsx
-│   │   │   │   └── home
+│   │   │   │   └── home/
 │   │   │   │       └── HomeLayout.jsx
 │   │   │   └── ui/
-│   │   │       └── containers
+│   │   │       └── containers/
 │   │   │           ├── Container.jsx
 │   │   │           ├── ContainerCustom.jsx
 │   │   │           └── ContainerExpandMobile.jsx
@@ -74,16 +80,16 @@
 │   │   │   │   ├── Counter.css
 │   │   │   │   ├── Counter.jsx
 │   │   │   │   └── index.css
-│   │   │   └── home
+│   │   │   └── home/
 │   │   │      ├── DifferenceProduct.jsx
 │   │   │      ├── FeatureSection.jsx
 │   │   │      ├── HeroSection.jsx
 │   │   │      ├── ProblemSection.jsx
 │   │   │      ├── SolutionSection.jsx
 │   │   │      └── Home.jsx
-│   │   ├── router
+│   │   ├── router/
 │   │   │   └── AppRouter.jsx
-│   │   └── styles
+│   │   └── styles/
 │   │       └── index.css
 │   ├── tailwind.config.js
 │   └── vite.config.js
