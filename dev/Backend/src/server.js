@@ -11,6 +11,6 @@ app.use(express.json()); //maneja json en las peticiones
 
 
 //rutas
-app.use("/initial/", initialRoute)
+app.use("/api/", initialRoute)
 
 export default app;

@@ -3,25 +3,24 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path' //mportación correcta
 
-// https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
-    react(),
-    tailwindcss(),
+    react(), 
+    tailwindcss()
   ],
-  envDir: "./env", // <-- aquí le dices a Vite que lea Frontend/env/
+  envDir: './env',
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
+    alias: { '@': path.resolve(__dirname, 'src') },
   },
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3000',
-        changeOrigin: true,
-        // rewrite: (path) => path.replace(/^\/api/, '/api'), // normalmente ni se necesita
-      },
-    },
-  },
-})
+  server: mode === 'development'
+    ? {
+        proxy: {
+          '/api': {
+            target: process.env.VITE_PROXY_TARGET || 'http://backend:3000',
+            changeOrigin: true,
+            secure: false,
+          },
+        },
+      }
+    : undefined,
+}))
