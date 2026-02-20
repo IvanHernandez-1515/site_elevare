@@ -64,13 +64,15 @@
 │   │   │   │   ├── ForgotPass.jsx
 │   │   │   │   ├── LoginForm.jsx
 │   │   │   │   └── register/
-│   │   │   │   │   ├── ui/
-│   │   │   │   │   │  ├── RegisterPage.jsx
-│   │   │   │   │   │  └── RegisterForm.jsx
-│   │   │   │   │   ├── schemas/
+│   │   │   │   │   ├── hooks/
+│   │   │   │   │   │  └── useRegisterForm.js
+│   │   │   │   │   ├── schema/
 │   │   │   │   │   │  └── register.schema.js
 │   │   │   │   │   ├── service/
 │   │   │   │   │   │  └── register.service.js
+│   │   │   │   │   └── ui/
+│   │   │   │   │      ├── RegisterPage.jsx
+│   │   │   │   │      └── RegisterForm.jsx
 │   │   │   ├── Counter/
 │   │   │   │   ├── Counter.css
 │   │   │   │   ├── Counter.jsx
@@ -86,6 +88,7 @@
 │   │   │   └── AppRouter.jsx
 │   │   ├── shared/
 │   │   │   ├── lib/
+│   │   │   │   ├── http.js
 │   │   │   │   └── validators.js
 │   │   └── styles/
 │   │   │   └── index.css

@@ -68,6 +68,7 @@ Elevare CV transforma tu experiencia en una presentación estratégica, adaptabl
 │   │   │   ├── features/
 │   │   │   │   ├── auth/
 │   │   │   │   │    ├── register/
+│   │   │   │   │    │    ├── hooks/
 │   │   │   │   │    │    ├── schema/
 │   │   │   │   │    │    ├── service/
 │   │   │   │   │    │    └── ui/
@@ -89,7 +90,7 @@ Elevare CV transforma tu experiencia en una presentación estratégica, adaptabl
 ```
 ---
 
-## Descripción por módulo
+## Tipo de arquitectura
 arquitectura
 Layered / N-Tier
 
