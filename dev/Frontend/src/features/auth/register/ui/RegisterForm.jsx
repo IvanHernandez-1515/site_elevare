@@ -1,73 +1,17 @@
-import { useMemo, useState } from "react";
-import { validateRegister } from "../schema/register.schema";
-import { registerService } from "../service/register.service";
+import { useRegisterForm } from "../hooks/useRegisterForm";
 //assets
 import GoogleIcon from "@/assets/images/pages/icons/Auth/Login/logo-google.svg";
 
-const initialValues = {
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-};
-
 const RegisterForm = () => {
-    const [values, setValues] = useState(initialValues);
-    const [errors, setErrors] = useState({});
-    const [apiError, setApiError] = useState("");
-    const [isSubmitting, setIsSubmitting] = useState(false);
-
-    const hasErrors = useMemo(() => Object.keys(errors).length > 0, [errors]);
-
-    const setField = (field) => (e) => {
-        const v = e.target.value;
-        setValues((prev) => ({ ...prev, [field]: v }));
-        // si ya había error en ese campo, lo limpiamos al teclear
-        setErrors((prev) => {
-            if (!prev[field]) return prev;
-            const copy = { ...prev };
-            delete copy[field];
-            return copy;
-        });
-        setApiError("");
-    };
-
-    const onSubmit = async (e) => {
-        e.preventDefault();
-        setApiError("");
-
-        const nextErrors = validateRegister(values);
-        setErrors(nextErrors);
-
-        if (Object.keys(nextErrors).length > 0) return;
-
-        setIsSubmitting(true);
-        try {
-            const payload = {
-                name: values.name.trim(),
-                email: values.email.trim(),
-                password: values.password,
-            };
-
-            const data = await registerService(payload);
-
-            // TODO: aquí decides qué hacer:
-            // - guardar token en store
-            // - redirigir a login
-            // - mostrar toast
+    const { values, errors, apiError, isSubmitting, hasErrors, setField, submit } =
+    useRegisterForm({
+        onSuccess: (data) => {
             console.log("REGISTER OK:", data);
-
-            // ejemplo: limpia form
-            setValues(initialValues);
-        } catch (err) {
-            setApiError(err?.message || "Ocurrió un error inesperado.");
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
-
+            // aquí ya decides: navigate("/login"), toast, store, etc.
+        },
+    });
     return (
-        <form className="mt-6 flex flex-col gap-y-4" onSubmit={onSubmit}>
+        <form className="mt-6 flex flex-col gap-y-4" onSubmit={submit}>
             <div>
                 <label htmlFor="name" className="font-sans text-sm font-medium text-elevare-text-main">
                     Nombre
@@ -163,9 +107,7 @@ const RegisterForm = () => {
                 type="button"
                 className="font-sans font-semibold text-sm text-elevare-text-main bg-white rounded-xl ring-1 ring-black/10 inline-flex items-center justify-center w-full px-4 py-3 transition-colors duration-300 hover:bg-elevare-neutral-dark/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                 aria-label="Continuar con Google"
-                onClick={() => {
-                    // TODO: tu OAuth
-                }}
+                onClick={() => { }}
             >
                 <img src={GoogleIcon} alt="Iniciar sesión con Google" className="mr-3 h-5 w-5" />
                 Continuar con Google
@@ -173,5 +115,4 @@ const RegisterForm = () => {
         </form>
     );
 };
-
 export default RegisterForm;
