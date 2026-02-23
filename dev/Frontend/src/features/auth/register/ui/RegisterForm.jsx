@@ -6,10 +6,10 @@ const RegisterForm = () => {
     const { values, errors, apiError, isSubmitting, hasErrors, setField, submit } =
     useRegisterForm({
         onSuccess: (data) => {
-            console.log("REGISTER OK:", data);
-            // aquí ya decides: navigate("/login"), toast, store, etc.
+            console.log("REGISTER OK:", data);//accion cuando el registro fue exitoso
+            //aqui puedes redirigir guardar token o mostrar mensaje
         },
-    });
+    });//obtiene estado validaciones y acciones desde el hook
     return (
         <form className="mt-6 flex flex-col gap-y-4" onSubmit={submit}>
             <div>
@@ -28,7 +28,6 @@ const RegisterForm = () => {
                 />
                 {errors.name && <p className="mt-2 font-sans text-xs text-red-600">{errors.name}</p>}
             </div>
-
             <div>
                 <label htmlFor="email" className="font-sans font-medium text-sm text-elevare-text-main">
                     Correo electrónico
@@ -45,7 +44,6 @@ const RegisterForm = () => {
                 />
                 {errors.email && <p className="mt-2 font-sans text-xs text-red-600">{errors.email}</p>}
             </div>
-
             <div>
                 <label htmlFor="password" className="font-sans text-sm font-medium text-elevare-text-main">
                     Contraseña
@@ -62,7 +60,6 @@ const RegisterForm = () => {
                 />
                 {errors.password && <p className="mt-2 font-sans text-xs text-red-600">{errors.password}</p>}
             </div>
-
             <div>
                 <label htmlFor="confirmPassword" className="font-sans text-sm font-medium text-elevare-text-main">
                     Confirmar contraseña
@@ -81,13 +78,11 @@ const RegisterForm = () => {
                     <p className="mt-2 font-sans text-xs text-red-600">{errors.confirmPassword}</p>
                 )}
             </div>
-
             {apiError && (
                 <div className="rounded-xl bg-red-50 ring-1 ring-red-200 px-4 py-3">
                     <p className="font-sans text-sm text-red-700">{apiError}</p>
                 </div>
             )}
-
             <button
                 type="submit"
                 disabled={isSubmitting || hasErrors}
@@ -96,13 +91,11 @@ const RegisterForm = () => {
             >
                 {isSubmitting ? "Creando cuenta..." : "Crear cuenta"}
             </button>
-
             <div className="flex items-center gap-3">
                 <span className="h-px flex-1 bg-elevare-neutral-dark/10" aria-hidden="true" />
                 <span className="font-sans text-xs text-elevare-text-muted">Ó</span>
                 <span className="h-px flex-1 bg-elevare-neutral-dark/10" aria-hidden="true" />
             </div>
-
             <button
                 type="button"
                 className="font-sans font-semibold text-sm text-elevare-text-main bg-white rounded-xl ring-1 ring-black/10 inline-flex items-center justify-center w-full px-4 py-3 transition-colors duration-300 hover:bg-elevare-neutral-dark/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
