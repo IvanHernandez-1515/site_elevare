@@ -36,8 +36,7 @@ class AppConfig {
     this.smtpSecure = false; // 587 => STARTTLS (secure=false)
     this.smtpAuth = true;
     this.mailUser = 'ivan.hernandez@ayuntamientopuebla.gob.mx';
-    // this.mailPass = '';
-    this.mailPass = 'Fen1#zon3.!';
+    this.mailPass = '';
 
     /** Tokens */
     this.emailVerifyTtlMinutes = 60;
