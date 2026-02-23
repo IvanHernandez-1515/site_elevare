@@ -9,12 +9,15 @@ class AppConfig {
     this.port = 3000;
     this.debug = true;
 
+    /** Externos */
+    this.frontUrl = process.env.FRONT_URL
+
     /** Base de datos */
     this.dbType = 'mysql';
     this.dbHost = 'db';
     this.dbUser = 'devuser';
     this.dbPassword = 'devpass';
-    this.dbName = 'elevare_db';
+    this.dbName = 'site_elevare_db';
     this.dbPort = 3306;
     this.dbPrefix = 'pbeo7_';
 
@@ -23,14 +26,21 @@ class AppConfig {
     this.jwtExpiresIn = '1d';
 
     /** Correo */
-    this.mailOnline = true;
-    this.mailFrom = 'portales.web@ayuntamientopuebla.gob.mx';
-    this.mailFromName = 'Sistema Municipal DIF';
-    this.mailHost = 'localhost';
-    this.mailPort = 25;
-    this.mailUser = '';
-    this.mailPass = '';
-    this.mailSecure = false;
+    this.mailOnline = true;// si false, NO manda mail (solo log)
+    this.mailFrom = 'ivan.hernandez@ayuntamientopuebla.gob.mx';
+    this.mailFromName = 'Sistema de Currículums Elevare';
+
+    this.mailer = 'smtp';
+    this.smtpHost = 'smtp.office365.com';
+    this.mailPort = 587;
+    this.smtpSecure = false; // 587 => STARTTLS (secure=false)
+    this.smtpAuth = true;
+    this.mailUser = 'ivan.hernandez@ayuntamientopuebla.gob.mx';
+    // this.mailPass = '';
+    this.mailPass = 'Fen1#zon3.!';
+
+    /** Tokens */
+    this.emailVerifyTtlMinutes = 60;
 
     /** Configuración general */
     this.editor = 'tinymce';

@@ -28,10 +28,7 @@ services:
     ports:
       - "${BACKEND_PORT_LOCAL}:${BACKEND_PORT_CONTAINER}"
     environment:
-      DB_HOST: ${DB_SERVICE_NAME}
-      DB_USER: ${MYSQL_USER}
-      DB_PASSWORD: ${MYSQL_PASSWORD}
-      DB_NAME: ${MYSQL_DATABASE}
+      - FRONT_URL=http://localhost:${FRONTEND_PORT_LOCAL}
     depends_on:
       - ${DB_SERVICE_NAME}
     networks:
