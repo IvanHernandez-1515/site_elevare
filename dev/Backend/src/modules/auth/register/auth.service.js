@@ -43,14 +43,24 @@ export const registerUser = async(payload) => {
         `Si tú no creaste esta cuenta, ignora este correo.\n`;
 
     const html = `
-        <div style="font-family: Arial, sans-serif; line-height:1.5">
-        <h3>Verifica tu correo</h3>
-        <p>Hola <b>${user.name}</b>,</p>
-        <p>Para verificar tu cuenta en <b>${config.siteName}</b>, haz clic aquí:</p>
-        <p><a href="${verifyLink}">Verificar correo</a></p>
-        <p>O copia y pega este enlace:</p>
-        <p style="word-break: break-all">${verifyLink}</p>
-        <p style="color:#666">Si tú no creaste esta cuenta, ignora este correo.</p>
+        <div style="font-family: Arial, sans-serif; font-size: 15px; padding: 25px 0; background: #f3f4f6;">
+            <div style="width: 600px; text-align: center; margin: 0 auto; background: #FFF;">
+                <div style="margin: 20px 0; padding: 0 15px; text-align: left;">
+                    <h3>Verifica tu correo</h3>
+                    <p>Hola <b>${user.name}</b>,</p>
+                    <p>Para verificar tu cuenta en <b>${config.siteName}</b>, haz clic aquí:</p>
+                    <p><a href="${verifyLink}">Verificar correo</a></p>
+                    <p>O copia y pega este enlace:</p>
+                    <p style="word-break: break-all">${verifyLink}</p>
+                    <p style="color:#666">Si tú no creaste esta cuenta, ignora este correo.</p>
+                    <hr style="margin:0 15px;color:#f3f4f6;">
+                    <div style="padding: 15px 0; text-align:center;">
+                        <img src="${config.frontUrl}/src/assets/images/pages/icons/general/logo-appv1.svg" 
+                            alt="Elevare CV" 
+                            style="width: 150px;">
+                    </div>
+                </div>
+            </div>
         </div>
     `;
 

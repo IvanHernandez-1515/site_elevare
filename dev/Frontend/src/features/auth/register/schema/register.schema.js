@@ -25,6 +25,7 @@ export const validateRegister = (values) => {
         else if (!s.upper) errors.password = "Incluye al menos una mayuscula."
         else if (!s.lower) errors.password = "Incluye al menos una minuscula."
         else if (!s.number) errors.password = "Incluye al menos un numero."
+        else if (!s.special) errors.password = "Incluye al menos un caracter especial (! @ # $ % ^ & *)"
     }
     //valida reglas de contrasena en orden
 

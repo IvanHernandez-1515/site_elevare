@@ -7,6 +7,7 @@ export const minLength = (value = "", n = 8) =>
 export const hasUpper = (value = "") => /[A-Z]/.test(value);
 export const hasLower = (value = "") => /[a-z]/.test(value);
 export const hasNumber = (value = "") => /\d/.test(value);
+export const hasSpecial = (value = "") => /[!@#$%^&*(),.?":{}|<>_\-\\[\]\/+=~`]/.test(value);
 
 export const passwordStrength = (value = "") => {
     const v = String(value);
@@ -15,5 +16,6 @@ export const passwordStrength = (value = "") => {
         upper: hasUpper(v),
         lower: hasLower(v),
         number: hasNumber(v),
+        special: hasSpecial(v),
     };
 };
