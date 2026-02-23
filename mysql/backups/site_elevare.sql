@@ -55,6 +55,24 @@ CREATE TABLE oauth_accounts (
     ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
+CREATE TABLE user_tokens (
+  id           BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  user_id      BIGINT UNSIGNED NOT NULL,
+  token_hash   CHAR(64) NOT NULL, -- sha256 del token en texto plano
+  kind         ENUM('email_verify','password_reset') NOT NULL,
+  expires_at   TIMESTAMP NOT NULL,
+  used_at      TIMESTAMP NULL,
+  created_at   TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+  UNIQUE KEY uq_user_tokens_hash (token_hash),
+  KEY idx_user_tokens_user (user_id),
+  KEY idx_user_tokens_kind (kind),
+  KEY idx_user_tokens_expires (expires_at),
+
+  CONSTRAINT fk_user_tokens_user FOREIGN KEY (user_id) REFERENCES users(id)
+    ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
 -- -------------------------
 -- Roles & Permissions
 -- -------------------------
@@ -419,6 +437,18 @@ INSERT IGNORE INTO roles (name, description) VALUES
 ('client', 'Usuario cliente'),
 ('moderator', 'Moderador'),
 ('superuser', 'Superusuario');
+
+INSERT IGNORE INTO permissions (code, description) VALUES
+('cv:create', 'Crear CV'),
+('cv:read', 'Ver CV'),
+('cv:update', 'Actualizar CV');
+
+-- asignar permisos al rol client
+INSERT IGNORE INTO role_permissions (role_id, permission_id)
+SELECT r.id, p.id
+FROM roles r
+JOIN permissions p
+WHERE r.name='client' AND p.code IN ('cv:create','cv:read','cv:update');
 
 INSERT IGNORE INTO language_levels (code, label) VALUES
 ('A1','Básico A1'),('A2','Básico A2'),
