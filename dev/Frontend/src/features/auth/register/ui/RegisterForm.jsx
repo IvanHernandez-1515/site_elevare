@@ -1,17 +1,35 @@
+import { useState } from "react";
+import AlertToast from "../../../../components/ui/alerts/Alert";
 import { useRegisterForm } from "../hooks/useRegisterForm";
 //assets
 import GoogleIcon from "@/assets/images/pages/icons/Auth/Login/logo-google.svg";
 
 const RegisterForm = () => {
+    const [toast, setToast] = useState({ open: false, type: "info", message: "", title: "" });
     const { values, errors, apiError, isSubmitting, hasErrors, setField, submit } =
     useRegisterForm({
         onSuccess: (data) => {
-            console.log("REGISTER OK:", data);//accion cuando el registro fue exitoso
-            //aqui puedes redirigir guardar token o mostrar mensaje
+            setToast({
+            open: true,
+            type: "info", // o "success" si quieres
+            title: "Verifica tu cuenta",
+            message: data?.message || "Revisa tu correo para verificar tu cuenta.",
+            });
+
+            console.log("REGISTER OK:", data);
         },
     });//obtiene estado validaciones y acciones desde el hook
     return (
         <form className="mt-6 flex flex-col gap-y-4" onSubmit={submit}>
+            <AlertToast
+                open={toast.open}
+                type={toast.type}
+                title={toast.title}
+                message={toast.message}
+                duration={5000}
+                position="top-right"
+                onClose={() => setToast((t) => ({ ...t, open: false }))}
+            />
             <div>
                 <label htmlFor="name" className="font-sans text-sm font-medium text-elevare-text-main">
                     Nombre

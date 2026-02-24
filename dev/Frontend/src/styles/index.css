@@ -36,3 +36,16 @@
     --color-features-responsive: oklab(100% 0 5.96046e-8 / .1);
     --color-tw-ring-color: #fff;   
 }
+
+@layer utilities {
+    @keyframes toast-in {
+        from {
+            opacity: 0;
+            transform: translateX(18px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}

@@ -8,7 +8,7 @@ export const register = async(req, res, next) => {
             success: true,
             message: "Revisa tu correo para verificar tu cuenta.",
             data: {
-                user: result.user,
+                // user: result.user,
                 emailVerificationRequired: true,
             }
         });
