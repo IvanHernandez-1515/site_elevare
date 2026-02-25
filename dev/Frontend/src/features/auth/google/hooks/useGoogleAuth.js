@@ -2,8 +2,6 @@ import { useCallback, useRef } from "react";
 import { googleAuthService } from "../service/google.service";
 
 export const useGoogleAuth = ({ onSuccess, onError } = {}) => {
-    console.log("CLIENT_ID:", import.meta.env.VITE_GOOGLE_CLIENT_ID);
-    console.log("ORIGIN:", window.location.origin);
     const initializedRef = useRef(false);
 
     const startGoogle = useCallback(() => {

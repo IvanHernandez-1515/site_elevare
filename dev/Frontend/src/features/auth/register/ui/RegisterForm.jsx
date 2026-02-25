@@ -29,7 +29,7 @@ const RegisterForm = () => {
             open: true, 
             type:"success", 
             title: "Bienvenido",
-            message: data?.message
+            message: data.message
         })
         // y redirigir:
         // navigate("/dashboard");
