@@ -14,6 +14,7 @@ export default defineConfig(({ mode }) => ({
   },
   server: mode === 'development'
     ? {
+        allowedHosts: true,
         proxy: {
           '/api': {
             target: process.env.VITE_PROXY_TARGET || 'http://backend:3000',

@@ -1,8 +1,9 @@
 import { useState } from "react";
-import AlertToast from "../../../../components/ui/alerts/Alert";
 import { useRegisterForm } from "../hooks/useRegisterForm";
-//assets
-import GoogleIcon from "@/assets/images/pages/icons/Auth/Login/logo-google.svg";
+import AlertToast from "../../../../components/ui/alerts/Alert";
+
+import { useGoogleAuth } from "../../google/hooks/useGoogleAuth";
+import GoogleButton from "../../google/ui/GoogleButton";
 
 const RegisterForm = () => {
     const [toast, setToast] = useState({ open: false, type: "info", message: "", title: "" });
@@ -19,6 +20,30 @@ const RegisterForm = () => {
             console.log("REGISTER OK:", data);
         },
     });//obtiene estado validaciones y acciones desde el hook
+
+    const { startGoogle } = useGoogleAuth({
+        onSuccess: (data) => {
+        console.log("GOOGLE OK:", data);
+        // aquí tu toast success
+        setToast({ 
+            open: true, 
+            type:"success", 
+            title: "Bienvenido",
+            message: data?.message
+        })
+        // y redirigir:
+        // navigate("/dashboard");
+        },
+        onError: (msg) => {
+        console.error("GOOGLE ERROR:", msg);
+        setToast({ 
+            open: true, 
+            type:"error", 
+            title: "Algo Falló",
+            message: message
+        })
+        },
+    });
     return (
         <form className="mt-6 flex flex-col gap-y-4" onSubmit={submit}>
             <AlertToast
@@ -114,15 +139,7 @@ const RegisterForm = () => {
                 <span className="font-sans text-xs text-elevare-text-muted">Ó</span>
                 <span className="h-px flex-1 bg-elevare-neutral-dark/10" aria-hidden="true" />
             </div>
-            <button
-                type="button"
-                className="font-sans font-semibold text-sm text-elevare-text-main bg-white rounded-xl ring-1 ring-black/10 inline-flex items-center justify-center w-full px-4 py-3 transition-colors duration-300 hover:bg-elevare-neutral-dark/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                aria-label="Continuar con Google"
-                onClick={() => { }}
-            >
-                <img src={GoogleIcon} alt="Iniciar sesión con Google" className="mr-3 h-5 w-5" />
-                Continuar con Google
-            </button>
+            <GoogleButton onClick={startGoogle} disabled={isSubmitting} />
         </form>
     );
 };
