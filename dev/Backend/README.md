@@ -12,6 +12,12 @@
 │   │   │   └── notFound.js
 │   │   ├── modules/
 │   │   │   ├── auth/
+│   │   │   │   └── google/
+│   │   │   │   │   ├── google.controller.js
+│   │   │   │   │   ├── google.repository.js
+│   │   │   │   │   ├── google.routes.js
+│   │   │   │   │   ├── google.service.js
+│   │   │   │   │   └── google.validators.js
 │   │   │   │   └── register/
 │   │   │   │   │   ├── auth.controller.js
 │   │   │   │   │   ├── auth.repository.js
