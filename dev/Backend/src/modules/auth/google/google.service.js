@@ -11,9 +11,8 @@ import {
     findUserById,
 } from "./google.repository.js";
 
-const client = new OAuth2Client(config.oathCliendid);
-
 export const handleGoogleAuth = async (credential) => {
+    const client = new OAuth2Client(config.oathCliendid);
     // 1) validar input (capa validators)
     const cred = validateGoogleCredential(credential);
 
@@ -29,6 +28,7 @@ export const handleGoogleAuth = async (credential) => {
     const googleId = payload.sub; // provider_user_id
     const email = payload.email?.toLowerCase();
     const name = payload.name || null;
+    
     const emailVerified = !!payload.email_verified;
 
     if (!googleId || !email) {

@@ -1,10 +1,13 @@
-import db from "../../../config/db.js";
+import { getPool } from "../../../db/pool.js";
 
 // =========================
 // Users helpers 
 // =========================
 export const findUserByEmail = async (email) => {
-    const [rows] = await db.query(
+    //instancia la bdObject
+    const pool = getPool();
+    
+    const [rows] = await pool.query(
         `SELECT * FROM users WHERE email=? LIMIT 1`,
         [email]
     );
@@ -12,7 +15,10 @@ export const findUserByEmail = async (email) => {
 };
 
 export const findUserById = async (userId) => {
-    const [rows] = await db.query(
+    //instancia la bdObject
+    const pool = getPool();
+
+    const [rows] = await pool.query(
         `SELECT * FROM users WHERE id=? LIMIT 1`,
         [userId]
     );
@@ -23,7 +29,10 @@ export const findUserById = async (userId) => {
 // OAuth queries
 // =========================
 export const findOauthByProviderUserId = async (provider, providerUserId) => {
-    const [rows] = await db.query(
+    //instancia la bdObject
+    const pool = getPool();
+
+    const [rows] = await pool.query(
         `SELECT * FROM oauth_accounts 
      WHERE provider=? AND provider_user_id=? LIMIT 1`,
         [provider, providerUserId]
@@ -32,7 +41,10 @@ export const findOauthByProviderUserId = async (provider, providerUserId) => {
 };
 
 export const findOauthByUserAndProvider = async (userId, provider) => {
-    const [rows] = await db.query(
+    //instancia la bdObject
+    const pool = getPool();
+    
+    const [rows] = await pool.query(
         `SELECT * FROM oauth_accounts 
      WHERE user_id=? AND provider=? LIMIT 1`,
         [userId, provider]
@@ -46,7 +58,10 @@ export const createOauthAccount = async ({
     providerUserId,
     providerEmail,
 }) => {
-    await db.query(
+    //instancia la bdObject
+    const pool = getPool();
+
+    await pool.query(
         `INSERT INTO oauth_accounts 
       (user_id, provider, provider_user_id, provider_email)
      VALUES (?, ?, ?, ?)`,
@@ -60,7 +75,10 @@ export const createUserGoogleWithRole = async ({
     roleName,
     emailVerified,
 }) => {
-    const conn = await db.getConnection();
+    //instancia la bdObject
+    const pool = getPool();
+
+    const conn = await pool.getConnection();
     try {
         await conn.beginTransaction();
 
@@ -95,7 +113,10 @@ export const createUserGoogleWithRole = async ({
 };
 
 export const updateUserEmailVerified = async (userId, verified) => {
-    await db.query(
+    //instancia la bdObject
+    const pool = getPool();
+
+    await pool.query(
         `UPDATE users SET email_verified=? WHERE id=?`,
         [verified ? 1 : 0, userId]
     );
