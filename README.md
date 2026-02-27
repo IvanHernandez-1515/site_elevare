@@ -34,9 +34,19 @@ Elevare CV transforma tu experiencia en una presentación estratégica, adaptabl
 ├── dev
 │   ├── Backend
 │   │   ├── conf/
+│   │   │   └── configuration.js
 │   │   ├── node_modules/
 │   │   └── src/
-│   │       └── routes/
+│   │   │   ├── db/
+│   │   │   ├── middlewares/
+│   │   │   ├── modules/
+│   │   │   │   ├── auth/
+│   │   │   │   │   └── google/
+│   │   │   │   │   └── register/
+│   │   │   │   │   └── tokens/
+│   │   │   │   └── initial/
+│   │   │   ├── routes/
+│   │   │   ├── utils/
 ├   ├── Frontend
 │   │   ├── env/
 │   │   ├── node_modules/
@@ -56,22 +66,36 @@ Elevare CV transforma tu experiencia en una presentación estratégica, adaptabl
 │   │   │   │   │   │    │    │    └── feature/
 │   │   │   ├── components/
 │   │   │   │   ├── common/
-│   │   │   │   │   ├── header/
-│   │   │   │   │   └── footer/
+│   │   │   │   │   ├── dashboard/
+│   │   │   │   │   │    ├── sidebar/
+│   │   │   │   │   │    └── topbar/
+│   │   │   │   │   ├── footer/
+│   │   │   │   │   └── header/
 │   │   │   │   ├── layouts/
 │   │   │   │   │   ├── auth/
+│   │   │   │   │   ├── dashboard/
 │   │   │   │   │   └── home/
 │   │   │   │   └── ui/
+│   │   │   │   │    ├── alerts/
 │   │   │   │   │    ├── card/
 │   │   │   │   │    └── containers/
 │   │   │   ├── config/
 │   │   │   ├── features/
 │   │   │   │   ├── auth/
-│   │   │   │   │    ├── register/
+│   │   │   │   │    ├── google/
+│   │   │   │   │    │    ├── hooks/
+│   │   │   │   │    │    ├── service/
+│   │   │   │   │    │    └── ui/
+│   │   │   │   │    ├── login/
 │   │   │   │   │    │    ├── hooks/
 │   │   │   │   │    │    ├── schema/
 │   │   │   │   │    │    ├── service/
 │   │   │   │   │    │    └── ui/
+│   │   │   │   │    └── register/
+│   │   │   │   │         ├── hooks/
+│   │   │   │   │         ├── schema/
+│   │   │   │   │         ├── service/
+│   │   │   │   │         └── ui/
 │   │   │   │   ├── Counter/
 │   │   │   │   └── home/
 │   │   │   ├── router/
