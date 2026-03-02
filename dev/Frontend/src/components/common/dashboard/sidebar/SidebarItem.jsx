@@ -2,43 +2,46 @@ import { NavLink } from "react-router-dom";
 
 export const SidebarItem = ({ item }) => {
     return (
-        <NavLink
-            to={item.to}
-            end={item.end}
-            className={({ isActive }) =>
-                [
-                    // LAYOUT
-                    "flex items-center",
-                    // POSITION
-                    "relative",
-                    // SIZE
-                    "w-full h-10",
-                    // SPACING
-                    "px-3 gap-3",
-                    // TYPO
-                    "font-sans text-sm",
-                    // COLOR
-                    isActive
-                        ? "text-elevare-primary bg-elevare-primary/10"
-                        : "text-elevare-text-main hover:bg-black/5 hover:text-elevare-primary",
-                    // EFFECT
-                    "transition-colors duration-300",
-                    // BORDER
-                    "rounded-lg",
-                    // MISC
-                    "focus-visible:outline-2 focus-visible:outline-elevare-primary focus-visible:outline-offset-2",
-                    // RESPONSIVE
-                    "md:text-base",
-                ].join(" ")
-            }
-        >
-            {item.icon ? (
-                <span className="grid place-items-center h-5 w-5 text-current" aria-hidden="true">
-                    {item.icon}
-                </span>
-            ) : null}
-
-            <span className="truncate">{item.label}</span>
+        <NavLink 
+            to={item.to} 
+            end={item.end}>
+            {({ isActive }) => (
+                <div
+                    className={[
+                        "group flex items-center relative",
+                        "w-full h-10 px-3 gap-3 rounded-xl",
+                        isActive
+                            ? "bg-elevare-primary/10 text-elevare-primary"
+                            : "text-elevare-text-main hover:bg-elevare-secondary/10 hover:text-elevare-primary",
+                    ].join(" ")}
+                >
+                    <span
+                        className={[
+                            "absolute left-0 top-1/2 -translate-y-1/2",
+                            "h-6 w-1 rounded-r-full",
+                            isActive
+                                ? "bg-elevare-primary"
+                                : "bg-transparent group-hover:bg-elevare-primary/40",
+                        ].join(" ")}
+                        aria-hidden="true"
+                    />
+                    {item.icon ? (
+                        <span
+                            className={[
+                                "text-elevare-primary",
+                                "group-hover:text-elevare-secondary",
+                                "group-[.active]:bg-elevare-primary/15",
+                                "group-[.active]:text-elevare-primary",
+                                "transition-colors duration-300",
+                            ].join(" ")}
+                            aria-hidden="true"
+                        >
+                            <item.icon size={18} strokeWidth={1.8} />
+                        </span>
+                    ) : null}
+                    <span className="truncate">{item.label}</span>
+                </div>
+            )}
         </NavLink>
     );
 };

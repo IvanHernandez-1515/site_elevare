@@ -49,81 +49,56 @@ export const Sidebar = ({ roles = [], permissions = [], className = "" }) => {
                 "inset-y-0 left-0 z-40",
                 // SIZE
                 "h-screen w-64 shrink-0",
-                // SPACING
-                "",
                 // TYPO
                 "font-sans",
                 // COLOR
                 "bg-elevare-neutral-light text-elevare-text-main",
-                // EFFECT
-                "shadow-sm",
-                // BORDER
-                "border-r border-black/10",
+                // BORDER + EFFECT
+                "border-r border-black/10 shadow-sm",
                 // MISC
                 "overflow-hidden",
-                // RESPONSIVE
-                "",
                 className,
             ].join(" ")}
         >
-            {/* Brand */}
-            <div
-                className={[
-                    "flex items-center",
-                    "relative",
-                    "h-16",
-                    "px-4",
-                    "font-heading",
-                    "bg-white",
-                    "",
-                    "border-b border-black/10",
-                    "",
-                    "",
-                ].join(" ")}
-            >
-                <div className="flex items-center gap-3">
-                    <div
-                        className={[
-                            "grid place-items-center",
-                            "relative",
-                            "h-10 w-10",
-                            "",
-                            "",
-                            "bg-elevare-primary/10 text-elevare-primary",
-                            "",
-                            "rounded-xl",
-                            "",
-                            "",
-                        ].join(" ")}
-                        aria-hidden="true"
-                    >
+            {/* Brand / Header */}
+            <div className="relative">
+                {/* Banda institucional */}
+                <div className="h-1 w-full bg-gradient-to-r from-elevare-primary to-elevare-secondary" />
+
+                <div
+                    className={[
+                        "flex items-center gap-3",
+                        "h-16 px-4",
+                        "bg-white",
+                        "border-b border-black/10",
+                    ].join(" ")}
+                >
+                    {/* Logo mark */}
+                    <div className="grid place-items-center h-10 w-10 rounded-xl bg-elevare-primary/10 text-elevare-primary">
                         <span className="text-sm font-semibold">EV</span>
                     </div>
 
-                    <div className="leading-tight">
-                        <div className="text-sm font-semibold text-elevare-text-main">
-                            Elevare CV
+                    <div className="min-w-0 leading-tight">
+                        <div className="flex items-center justify-between">
+                            <div className="truncate text-sm font-semibold text-elevare-text-main">
+                                Elevare CV
+                            </div>
+                            <div>
+                                {/* “pill” sutil para dar feel premium */}
+                                <span className="shrink-0 rounded-full bg-elevare-secondary/10 px-2 py-0.5 text-[11px] font-medium text-elevare-secondary">
+                                    Dashboard
+                                </span>
+                            </div>
                         </div>
-                        <div className="text-xs text-elevare-text-muted">Dashboard</div>
+                        {/* <div className="truncate text-xs text-elevare-text-muted">
+                            CVs dinámicos • modulares • personalizables
+                        </div> */}
                     </div>
                 </div>
             </div>
 
             {/* Nav */}
-            <nav
-                className={[
-                    "block",
-                    "relative",
-                    "",
-                    "p-3",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "overflow-auto",
-                    "",
-                ].join(" ")}
-            >
+            <nav className="relative p-3 overflow-auto">
                 <ul className="space-y-1">
                     {items.map((item) => {
                         if (item.type === "divider") {
@@ -144,39 +119,28 @@ export const Sidebar = ({ roles = [], permissions = [], className = "" }) => {
             </nav>
 
             {/* Footer */}
-            <div
-                className={[
-                    "mt-auto",
-                    "relative",
-                    "",
-                    "p-3",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "border-t border-black/10",
-                    "",
-                ].join(" ")}
-            >
+            <div className="mt-auto p-3 border-t border-black/10 bg-white">
                 <button
                     type="button"
                     className={[
-                        "inline-flex items-center justify-center",
-                        "relative",
-                        "w-full h-10",
-                        "px-3",
+                        "inline-flex items-center justify-center gap-2",
+                        "w-full h-10 px-3",
                         "text-sm font-medium",
-                        "text-elevare-text-main bg-white hover:bg-black/5",
+                        "rounded-xl",
+                        "border border-black/10",
+                        "bg-elevare-primary text-white",
+                        "hover:bg-elevare-primary/90",
                         "transition-colors duration-300",
-                        "rounded-xl border border-black/10",
                         "focus-visible:outline-2 focus-visible:outline-elevare-primary focus-visible:outline-offset-2",
-                        "",
-                        "",
                     ].join(" ")}
                     onClick={() => console.log("logout")}
                 >
-                    Cerrar sesion
+                    Cerrar sesión
                 </button>
+
+                {/* <div className="mt-2 text-center text-xs text-elevare-text-muted">
+                    Tu CV, listo para cada oportunidad.
+                </div> */}
             </div>
         </aside>
     );

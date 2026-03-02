@@ -7,15 +7,15 @@ import { Topbar } from "../../common/dashboard/topbar/Topbar";
 export const DashboardLayout = ({children}) => {
     return (
         <>
-            <div className="min-h-screen xl:flex">
+            <main>
                 <Sidebar />
                 <div className="flex-1 transition-all duration-300 ease-in-out lg:ml-[290px]">
                     <Topbar />
-                    <main>
+                    <div>
                         <Outlet />
-                    </main>
+                    </div>
                 </div>
-            </div>
+            </main>
         </>
     )
 }

@@ -1,56 +1,59 @@
+import {
+    LayoutDashboard,
+    FileText,
+    User,
+    Users,
+    ShieldCheck,
+    Gavel,
+} from "lucide-react";
 
 export const navConfig = [
-    // --- seccion general
     {
         key: "dashboard",
         label: "Dashboard",
         to: "/app",
-        match: ["/app"],
         any: true,
+        icon: LayoutDashboard,
     },
     {
         key: "cvs",
         label: "Mis CVs",
         to: "/app/cv",
-        match: ["/app/cv"],
         permissions: ["cv:read"],
+        icon: FileText,
     },
     {
         key: "profile",
         label: "Perfil",
         to: "/app/profile",
-        match: ["/app/profile"],
         any: true,
+        icon: User,
     },
 
-    // --- separador
     { type: "divider", key: "div-admin" },
 
-    // --- admin
     {
         key: "admin-users",
         label: "Usuarios",
         to: "/app/admin/users",
-        match: ["/app/admin/users"],
         roles: ["superuser"],
+        icon: Users,
     },
     {
         key: "admin-roles",
         label: "Roles y permisos",
         to: "/app/admin/roles",
-        match: ["/app/admin/roles"],
         roles: ["superuser"],
+        icon: ShieldCheck,
     },
 
-    // --- separador
     { type: "divider", key: "div-mod" },
 
-    // --- moderacion (placeholder)
     {
         key: "moderation",
         label: "Moderacion",
         to: "/app/moderation",
-        match: ["/app/moderation"],
         roles: ["moderator", "superuser"],
+        icon: Gavel,
     },
 ];
