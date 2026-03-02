@@ -34,15 +34,15 @@ Elevare CV transforma tu experiencia en una presentación estratégica, adaptabl
 ├── dev
 │   ├── Backend
 │   │   ├── conf/
-│   │   │   └── configuration.js
 │   │   ├── node_modules/
 │   │   └── src/
 │   │   │   ├── db/
 │   │   │   ├── middlewares/
 │   │   │   ├── modules/
 │   │   │   │   ├── auth/
-│   │   │   │   │   └── google/
-│   │   │   │   │   └── register/
+│   │   │   │   │   ├── google/
+│   │   │   │   │   ├── login/
+│   │   │   │   │   ├── register/
 │   │   │   │   │   └── tokens/
 │   │   │   │   └── initial/
 │   │   │   ├── routes/
@@ -97,6 +97,11 @@ Elevare CV transforma tu experiencia en una presentación estratégica, adaptabl
 │   │   │   │   │         ├── service/
 │   │   │   │   │         └── ui/
 │   │   │   │   ├── Counter/
+│   │   │   │   ├── dashboard/
+│   │   │   │   │    ├── home/
+│   │   │   │   │    │    └── ui/
+│   │   │   │   │    └── profile/
+│   │   │   │   │    │    └── ui/
 │   │   │   │   └── home/
 │   │   │   ├── router/
 │   │   │   ├── shared/
