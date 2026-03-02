@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 //assets
 import GoogleIcon from "@/assets/images/pages/icons/Auth/Login/logo-google.svg";
 
-
 const LoginForm = () => {
     return (
         <form className="mt-6 flex flex-col gap-y-4"
@@ -78,17 +77,6 @@ const LoginForm = () => {
                 <img src={GoogleIcon} alt="Iniciar sesión con Google" className="mr-3 h-5 w-5" />
                 Continuar con Google
             </button>
-            <div className="pt-2">
-                <p className="font-sans text-sm text-elevare-text-muted">
-                    ¿No tienes cuenta?{" "}
-                    <Link
-                        to="/registrarse"
-                        className="font-sans font-semibold text-elevare-primary hover:text-elevare-primary-light focus:outline-none focus-visible:ring-2 focus-visible:ring-elevare-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded"
-                    >
-                        Crear una
-                    </Link>
-                </p>
-            </div>
         </form>
     );
 };

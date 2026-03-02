@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom"
-
+//commons
+import { PageMeta } from "../../../../components";
 //layouts
 import { AuthLayout } from "../../../../components";
 //components
 import { ContainerCustom } from "../../../../components";
 
 import RegisterForm from "./RegisterForm";
-
 const RegisterPage = () => {
     return (
         <>
+            <PageMeta
+                title="Registrarse"
+                description="Crea tu cuenta en Elevare"
+                canonicalPath="/registrarse"
+                noIndex
+            />
             <AuthLayout>
                 <ContainerCustom>
                     <div className="px-3 my-10">

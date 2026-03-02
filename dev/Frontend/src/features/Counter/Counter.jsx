@@ -1,4 +1,7 @@
 import { useState } from 'react'
+//commons
+import { PageMeta } from '../../components';
+//assets
 import reactLogo from '@/assets/react.svg'
 import viteLogo from '/vite.svg'
 // import './Counter.css';
@@ -9,6 +12,12 @@ const Counter = () => {
 
   return (
     <>
+      <PageMeta 
+        title="Example" 
+        description="Pagina de ejemplo" 
+        canonicalPath="/example" 
+        noIndex 
+      />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
