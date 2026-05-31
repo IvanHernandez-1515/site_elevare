@@ -15,7 +15,7 @@ services:
     depends_on:
       - ${BACKEND_SERVICE_NAME}
     networks:
-      - ${TRAEFIK_NETWORK}
+      - app_net
 
   backend:
     image: node:20-alpine
@@ -32,7 +32,7 @@ services:
     depends_on:
       - ${DB_SERVICE_NAME}
     networks:
-      - ${TRAEFIK_NETWORK}
+      - app_net
 
   db:
     image: mysql:8
@@ -49,7 +49,7 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     networks:
-      - ${TRAEFIK_NETWORK}
+      - app_net
   
   adminer:
     image: adminer
@@ -58,8 +58,9 @@ services:
     ports:
       - ${PORT_GESTOR}:8080
     networks:
-      - ${TRAEFIK_NETWORK}
+      - app_net
 
 networks:
-  traefik_net:
-    external: true
+  app_net:
+    name: ${CONTAINER_NAME}_dev_net
+    driver: bridge
