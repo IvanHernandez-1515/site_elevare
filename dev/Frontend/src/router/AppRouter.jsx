@@ -4,7 +4,7 @@ import { DashboardLayout } from '../components';
 //contador
 import Counter from '../features/Counter/Counter';
 //mainpages
-import HomePage from '../features/home/Home';
+import HomePage from '../pages/home/Home';
 import LoginPage from '../features/auth/login/ui/LoginPage';
 import RegisterPage from '../features/auth/register/ui/RegisterPage';
 import { ForgotPasswd } from '../features/auth/ForgotPass';
