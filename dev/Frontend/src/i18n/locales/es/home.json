@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "Elevare CV | Crea tu CV profesional en minutos",
+    "description": "Crea, personaliza y exporta currículums profesionales de forma rápida con Elevare CV."
+  },
+    "language": {
+    "label": "Seleccionar idioma",
+    "spanish": "Español",
+    "english": "Inglés"
+  },
+  "navbar": {
+    "brand": "Elevare CV",
+    "links": {
+      "howItWorks": "Cómo funciona",
+      "templates": "Plantillas",
+      "pricing": "Precios",
+      "login": "Acceder"
+    },
+    "cta": "Crear mi CV"
+  },
+  "hero": {
+    "title": {
+      "line1": "Tu perfil evoluciona.",
+      "line2": "Tu CV también."
+    },
+    "description": "Crea tu perfil una vez y genera versiones de CV para cada oportunidad. Cambia el diseño, elige qué mostrar y exporta en PDF en segundos.",
+    "primaryCta": "Crear mi CV gratis",
+    "secondaryCta": "Ver cómo funciona",
+    "features": {
+      "reusableProfile": "Perfil reutilizable",
+      "realTimePreview": "Vista previa en tiempo real",
+      "pdfExport": "Exportación PDF"
+    },
+    "media": {
+      "previewAlt": "Vista previa del editor de Elevare CV con formulario de perfil y currículum generado."
+    }
+  },
+  "problemSolution": {
+    "problem": {
+      "title": "El problema",
+      "items": [
+        "Repetir tu información cada vez que aplicas.",
+        "Perder tiempo ajustando y reescribiendo.",
+        "Los CVs no reflejan lo mejor de tu perfil."
+      ]
+    },
+    "solution": {
+      "title": "La solución",
+      "items": [
+        "Crea tu perfil una vez y reutilízalo siempre.",
+        "Genera versiones para cada oportunidad en minutos.",
+        "Tú decides qué mostrar y cómo presentarlo."
+      ]
+    }
+  },
+  "benefits": {
+    "items": [
+      {
+        "title": "Un perfil, muchas versiones",
+        "description": "Tu información centralizada y lista para crear CVs a medida sin volver a escribir."
+      },
+      {
+        "title": "Cambia diseño sin perder contenido",
+        "description": "Explora plantillas y cambia el look de tu CV manteniendo todo tu contenido."
+      },
+      {
+        "title": "Control total de secciones",
+        "description": "Activa, oculta y reordena secciones para mostrar lo que realmente importa."
+      },
+      {
+        "title": "Exporta listo para postular",
+        "description": "Descarga tu CV en PDF optimizado y listo para enviar en segundos."
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "Cómo funciona",
+    "steps": [
+      {
+        "title": "Crea tu perfil",
+        "description": "Completa tu información una sola vez. Nosotros la guardamos por ti."
+      },
+      {
+        "title": "Elige una plantilla",
+        "description": "Selecciona el diseño que mejor se adapte a tu estilo y objetivo."
+      },
+      {
+        "title": "Adapta tu versión",
+        "description": "Personaliza el contenido, ordena secciones y enfoca tu CV a la oportunidad."
+      },
+      {
+        "title": "Exporta y postula",
+        "description": "Exporta en PDF y envía tu CV con confianza. Estás listo para avanzar."
+      }
+    ]
+  },
+  "versions": {
+    "eyebrow": "Un solo perfil, versiones ilimitadas",
+    "title": "Crea diferentes CVs para cada oportunidad.",
+    "description": "Duplica, edita y organiza tus versiones según el puesto o la empresa. Mantén el control y evoluciona tu perfil mientras avanzas.",
+    "cta": "Ver mis CVs",
+    "media": {
+      "previewAlt": "Vista previa del panel Mis CVs con diferentes versiones de currículum organizadas."
+    }
+  },
+  "finalCta": {
+    "title": "Tu próximo empleo empieza con un CV que te representa.",
+    "description": "Crea tu CV gratis y da el siguiente paso hoy.",
+    "button": "Crear mi CV gratis",
+    "media": {
+      "iconAlt": ""
+    }
+  },
+  "footer": {
+    "brand": "Elevare CV",
+    "description": "El creador de CVs que te ayuda a crecer. Un perfil. Muchas oportunidades.",
+    "columns": {
+      "product": {
+        "title": "Producto",
+        "links": {
+          "howItWorks": "Cómo funciona",
+          "templates": "Plantillas",
+          "pricing": "Precios",
+          "myResumes": "Mis CVs"
+        }
+      },
+      "resources": {
+        "title": "Recursos",
+        "links": {
+          "guides": "Guías y consejos",
+          "blog": "Blog",
+          "helpCenter": "Centro de ayuda",
+          "faq": "Preguntas frecuentes"
+        }
+      },
+      "company": {
+        "title": "Empresa",
+        "links": {
+          "about": "Sobre nosotros",
+          "contact": "Contacto",
+          "terms": "Términos y condiciones",
+          "privacy": "Política de privacidad"
+        }
+      }
+    },
+    "copyright": "© 2024 Elevare CV",
+    "rights": "Todos los derechos reservados."
+  }
+}

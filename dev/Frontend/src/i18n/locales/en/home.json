@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "Elevare CV | Create your professional resume in minutes",
+    "description": "Create, customize, and export professional resumes quickly with Elevare CV."
+  },
+  "language": {
+    "label": "Select language",
+    "spanish": "Spanish",
+    "english": "English"
+  },
+  "navbar": {
+    "brand": "Elevare CV",
+    "links": {
+      "howItWorks": "How it works",
+      "templates": "Templates",
+      "pricing": "Pricing",
+      "login": "Sign in"
+    },
+    "cta": "Create my resume"
+  },
+  "hero": {
+    "title": {
+      "line1": "Your profile evolves.",
+      "line2": "Your resume too."
+    },
+    "description": "Create your profile once and generate resume versions for every opportunity. Change the design, choose what to show, and export to PDF in seconds.",
+    "primaryCta": "Create my resume for free",
+    "secondaryCta": "See how it works",
+    "features": {
+      "reusableProfile": "Reusable profile",
+      "realTimePreview": "Real-time preview",
+      "pdfExport": "PDF export"
+    },
+    "media": {
+      "previewAlt": "Preview of the Elevare CV editor with a profile form and generated resume."
+    }
+  },
+  "problemSolution": {
+    "problem": {
+      "title": "The problem",
+      "items": [
+        "Repeating your information every time you apply.",
+        "Wasting time adjusting and rewriting.",
+        "Resumes do not reflect the best of your profile."
+      ]
+    },
+    "solution": {
+      "title": "The solution",
+      "items": [
+        "Create your profile once and reuse it anytime.",
+        "Generate versions for each opportunity in minutes.",
+        "You decide what to show and how to present it."
+      ]
+    }
+  },
+  "benefits": {
+    "items": [
+      {
+        "title": "One profile, many versions",
+        "description": "Your information centralized and ready to create tailored resumes without writing everything again."
+      },
+      {
+        "title": "Change the design without losing content",
+        "description": "Explore templates and change the look of your resume while keeping all your content."
+      },
+      {
+        "title": "Full control over sections",
+        "description": "Enable, hide, and reorder sections to show what truly matters."
+      },
+      {
+        "title": "Export ready to apply",
+        "description": "Download your resume as an optimized PDF, ready to send in seconds."
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "steps": [
+      {
+        "title": "Create your profile",
+        "description": "Complete your information once. We save it for you."
+      },
+      {
+        "title": "Choose a template",
+        "description": "Select the design that best fits your style and goal."
+      },
+      {
+        "title": "Adapt your version",
+        "description": "Customize the content, reorder sections, and focus your resume on the opportunity."
+      },
+      {
+        "title": "Export and apply",
+        "description": "Export to PDF and send your resume with confidence. You are ready to move forward."
+      }
+    ]
+  },
+  "versions": {
+    "eyebrow": "One profile, unlimited versions",
+    "title": "Create different resumes for every opportunity.",
+    "description": "Duplicate, edit, and organize your versions by role or company. Stay in control and evolve your profile as you move forward.",
+    "cta": "View my resumes",
+    "media": {
+      "previewAlt": "Preview of the My Resumes dashboard with different resume versions organized."
+    }
+  },
+  "finalCta": {
+    "title": "Your next job starts with a resume that represents you.",
+    "description": "Create your resume for free and take the next step today.",
+    "button": "Create my resume for free",
+    "media": {
+      "iconAlt": ""
+    }
+  },
+  "footer": {
+    "brand": "Elevare CV",
+    "description": "The resume builder that helps you grow. One profile. Many opportunities.",
+    "columns": {
+      "product": {
+        "title": "Product",
+        "links": {
+          "howItWorks": "How it works",
+          "templates": "Templates",
+          "pricing": "Pricing",
+          "myResumes": "My resumes"
+        }
+      },
+      "resources": {
+        "title": "Resources",
+        "links": {
+          "guides": "Guides and tips",
+          "blog": "Blog",
+          "helpCenter": "Help center",
+          "faq": "Frequently asked questions"
+        }
+      },
+      "company": {
+        "title": "Company",
+        "links": {
+          "about": "About us",
+          "contact": "Contact",
+          "terms": "Terms and conditions",
+          "privacy": "Privacy policy"
+        }
+      }
+    },
+    "copyright": "© 2024 Elevare CV",
+    "rights": "All rights reserved."
+  }
+}
