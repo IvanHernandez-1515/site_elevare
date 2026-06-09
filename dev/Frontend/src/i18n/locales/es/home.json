@@ -3,13 +3,38 @@
     "title": "Elevare CV | Crea tu CV profesional en minutos",
     "description": "Crea, personaliza y exporta currículums profesionales de forma rápida con Elevare CV."
   },
-    "language": {
+  "accessibility": {
+    "skipToContent": "Saltar al contenido principal"
+  },
+  "language": {
     "label": "Seleccionar idioma",
     "spanish": "Español",
-    "english": "Inglés"
+    "english": "Inglés",
+    "current": "idioma seleccionado",
+    "changeTo": "Cambiar idioma a",
+    "options": {
+      "es": {
+        "short": "ES",
+        "label": "Español",
+        "nativeLabel": "Español",
+        "icon": "spanish_ES"
+      },
+      "en": {
+        "short": "EN",
+        "label": "Inglés",
+        "nativeLabel": "English (US)",
+        "icon": "english_USA"
+      }
+    }
   },
   "navbar": {
     "brand": "Elevare CV",
+    "homeLabel": "Ir al inicio de Elevare CV",
+    "navLabel": "Navegación principal",
+    "mobileMenu": {
+      "open": "Abrir menú principal",
+      "close": "Cerrar menú principal"
+    },
     "links": {
       "howItWorks": "Cómo funciona",
       "templates": "Plantillas",

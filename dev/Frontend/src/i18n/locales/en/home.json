@@ -3,20 +3,45 @@
     "title": "Elevare CV | Create your professional resume in minutes",
     "description": "Create, customize, and export professional resumes quickly with Elevare CV."
   },
+  "accessibility": {
+    "skipToContent": "Skip to main content"
+  },
   "language": {
     "label": "Select language",
     "spanish": "Spanish",
-    "english": "English"
+    "english": "English",
+    "current": "selected language",
+    "changeTo": "Change language to",
+    "options": {
+      "es": {
+        "short": "ES",
+        "label": "Spanish",
+        "nativeLabel": "Español",
+        "icon": "spanish_ES"
+      },
+      "en": {
+        "short": "EN",
+        "label": "English",
+        "nativeLabel": "English (US)",
+        "icon": "english_USA"
+      }
+    }
   },
   "navbar": {
     "brand": "Elevare CV",
+    "homeLabel": "Go to Elevare CV home",
+    "navLabel": "Main navigation",
+    "mobileMenu": {
+      "open": "Open main menu",
+      "close": "Close main menu"
+    },
     "links": {
       "howItWorks": "How it works",
       "templates": "Templates",
       "pricing": "Pricing",
       "login": "Sign in"
     },
-    "cta": "Create my resume"
+    "cta": "Create my CV"
   },
   "hero": {
     "title": {
