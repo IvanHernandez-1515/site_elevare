@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 //commons
 import {PageMeta} from "../../components/common/seo/PageMeta";
 //layouts
@@ -10,12 +11,14 @@ import SolutionSection from './SolutionSection';
 import DifferenceProduct from './DifferenceProduct';
 
 const HomePage = () => {
+    const { t, i18n } = useTranslation("home");
     return (
         <>
             <PageMeta
-                description="Crea y gestiona tu CV de forma simple y profesional"
-                canonicalPath="/"
-            />
+        title={t("meta.title")}
+        description={t("meta.description")}
+        canonicalPath="/"
+      />
             <HomeLayout>
                 <HeroSection />
                 <ProblemSection />
