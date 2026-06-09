@@ -15,10 +15,10 @@ const HomePage = () => {
     return (
         <>
             <PageMeta
-        title={t("meta.title")}
-        description={t("meta.description")}
-        canonicalPath="/"
-      />
+                title={t("meta.title")}
+                description={t("meta.description")}
+                canonicalPath="/"
+            />
             <HomeLayout>
                 <HeroSection />
                 <ProblemSection />
