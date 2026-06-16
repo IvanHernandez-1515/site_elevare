@@ -21,9 +21,10 @@ export const HomeLayout = ({ children }) => {
                 {t("accessibility.skipToContent")}
             </a>
 
-            <HeaderHomeTop />
-
-            <Header />
+            <header className="relative z-50">
+                <HeaderHomeTop />
+                <Header />
+            </header>
 
             <main id="main-content">
                 {children}

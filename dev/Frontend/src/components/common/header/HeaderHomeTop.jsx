@@ -8,15 +8,15 @@ export const HeaderHomeTop = () => {
     const { t } = useTranslation("home");
 
     return (
-        <section
+        <div
             aria-label={t("language.label")}
-            className="hidden border-b border-elevare-border/80 bg-elevare-bg md:block"
+            className="hidden border-b border-elevare-border/80 bg-elevare-bg md:block py-1"
         >
             <Container>
                 <div className="flex min-h-10 items-center justify-end">
                     <LanguageSwitcher />
                 </div>
             </Container>
-        </section>
+        </div>
     );
 };
