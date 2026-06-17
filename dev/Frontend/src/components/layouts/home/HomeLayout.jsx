@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 import { HeaderHomeTop } from "../../common/header/HeaderHomeTop";
-import { Header } from "../../common/header/HeaderHome";
+import { HeaderHomeMain } from "../../common/header/HeaderHomeMain.jsx";
 import { Footer } from "../../common/footer/FooterHome";
 
 export const HomeLayout = ({ children }) => {
@@ -23,7 +23,7 @@ export const HomeLayout = ({ children }) => {
 
             <header className="relative z-50">
                 <HeaderHomeTop />
-                <Header />
+                <HeaderHomeMain />
             </header>
 
             <main id="main-content">
