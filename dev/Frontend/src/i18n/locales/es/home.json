@@ -168,7 +168,11 @@
         }
       }
     },
-    "copyright": "© 2024 Elevare CV",
+    "social": {
+      "label": "Redes sociales de Elevare CV",
+      "linkLabel": "Abrir {{network}} de Elevare CV en una pestaña nueva"
+    },
+    "linksLabel": "Enlaces del pie de página",
     "rights": "Todos los derechos reservados."
   }
 }

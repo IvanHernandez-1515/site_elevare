@@ -1,30 +1,25 @@
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useLanguageOptions } from "../../../i18n/useLanguageOptions";
 
-export const LanguageSwitcher = ({ className = "" }) => {
+export const LanguageSwitcher = ({
+    className = "",
+    buttonClassName = "",
+    dropdownClassName = "",
+}) => {
     const { t, i18n } = useTranslation("home");
-
-    //opciones_de_idioma
     const languages = useLanguageOptions();
 
-    //referencias_del_dropdown
-    const dropdownId = useId();
-    const buttonRef = useRef(null);
     const dropdownRef = useRef(null);
+    const buttonRef = useRef(null);
 
-    //estado_del_menu
     const [isOpen, setIsOpen] = useState(false);
 
-    //idioma_actual_normalizado
-    const currentLanguage = (i18n.resolvedLanguage || i18n.language || "es")
-        .split("-")[0];
+    const currentLanguage = (i18n.resolvedLanguage || i18n.language || "es").split("-")[0];
 
-    //datos_del_idioma_actual
     const currentLanguageData =
-        languages.find((language) => language.code === currentLanguage) ||
-        languages[0];
+        languages.find((language) => language.code === currentLanguage) || languages[0];
 
     const closeDropdown = () => {
         setIsOpen(false);
@@ -44,15 +39,13 @@ export const LanguageSwitcher = ({ className = "" }) => {
     };
 
     useEffect(() => {
-        //cierra_con_escape
         const handleEscapeKey = (event) => {
-            if (event.key === "Escape") {
-                closeDropdown();
-                buttonRef.current?.focus();
-            }
+            if (event.key !== "Escape") return;
+
+            closeDropdown();
+            buttonRef.current?.focus();
         };
 
-        //cierra_al_hacer_click_fuera
         const handleClickOutside = (event) => {
             const clickedButton = buttonRef.current?.contains(event.target);
             const clickedDropdown = dropdownRef.current?.contains(event.target);
@@ -65,7 +58,6 @@ export const LanguageSwitcher = ({ className = "" }) => {
         document.addEventListener("keydown", handleEscapeKey);
         document.addEventListener("mousedown", handleClickOutside);
 
-        //limpia_eventos_al_desmontar
         return () => {
             document.removeEventListener("keydown", handleEscapeKey);
             document.removeEventListener("mousedown", handleClickOutside);
@@ -77,45 +69,44 @@ export const LanguageSwitcher = ({ className = "" }) => {
     }
 
     return (
-        <div
-            className={[
-                "inline-flex relative",
-                className,
-            ].filter(Boolean).join(" ")}
-        >
+        <div className={["relative inline-flex", className].join(" ")}>
             <button
                 ref={buttonRef}
                 type="button"
-                onClick={toggleDropdown}
-                aria-haspopup="true"
+                aria-haspopup="listbox"
                 aria-expanded={isOpen}
-                aria-controls={dropdownId}
-                aria-label={`${t("language.currentLanguage")}: ${currentLanguageData.nativeLabel}`}
+                aria-label={`${t("language.label")}: ${currentLanguageData.nativeLabel}`}
+                onClick={toggleDropdown}
                 className={[
-                    "inline-flex items-center",
-                    "h-8",
+                    "inline-flex items-center justify-between",
+                    "min-h-10",
                     "gap-2 px-3",
-                    "text-xs font-semibold",
-                    "bg-elevare-surface text-elevare-ink hover:bg-white hover:text-elevare-primary-deep",
-                    "shadow-sm transition-colors duration-200",
-                    "rounded-lg border border-elevare-border hover:border-elevare-primary",
-                    "focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-elevare-primary",
+                    "font-sans text-xs font-semibold",
+                    "text-elevare-ink bg-elevare-surface",
+                    "transition-colors hover:border-elevare-primary hover:bg-elevare-bg focus-visible:bg-elevare-primary-soft",
+                    "border border-elevare-border rounded-lg",
+                    "shadow-sm",
+                    buttonClassName,
                 ].join(" ")}
             >
-                <img
-                    src={currentLanguageData.iconSrc}
-                    alt=""
-                    aria-hidden="true"
-                    className="w-4 h-4 rounded-full object-cover"
-                />
-                <span>{currentLanguageData.short}</span>
+                <span className="inline-flex items-center gap-2">
+                    <img
+                        src={currentLanguageData.iconSrc}
+                        alt=""
+                        aria-hidden="true"
+                        className="h-4 w-4 rounded-full"
+                    />
+
+                    <span>{currentLanguageData.short}</span>
+                </span>
+
                 <svg
                     aria-hidden="true"
                     viewBox="0 0 20 20"
                     className={[
-                        "w-4 h-4",
+                        "h-4 w-4",
                         "text-elevare-muted",
-                        "transition-transform duration-200",
+                        "transition-transform",
                         isOpen ? "rotate-180" : "",
                     ].join(" ")}
                     fill="currentColor"
@@ -128,23 +119,23 @@ export const LanguageSwitcher = ({ className = "" }) => {
                 </svg>
             </button>
 
-            {isOpen && (
+            {isOpen ? (
                 <div
                     ref={dropdownRef}
-                    id={dropdownId}
+                    role="listbox"
+                    aria-label={t("language.label")}
                     className={[
-                        "absolute top-10 right-0 z-50",
+                        "absolute right-0 top-12",
+                        "z-[100]",
                         "w-48",
                         "p-2",
                         "bg-elevare-surface",
-                        "shadow-xl shadow-slate-900/10",
-                        "rounded-xl border border-elevare-border",
+                        "border border-elevare-border rounded-xl",
+                        "shadow-xl",
+                        dropdownClassName,
                     ].join(" ")}
                 >
-                    <ul
-                        className="space-y-1"
-                        aria-label={t("language.label")}
-                    >
+                    <ul className="flex flex-col gap-1">
                         {languages.map((language) => {
                             const isSelected = language.code === currentLanguage;
 
@@ -152,48 +143,42 @@ export const LanguageSwitcher = ({ className = "" }) => {
                                 <li key={language.code}>
                                     <button
                                         type="button"
-                                        onClick={() => handleChangeLanguage(language.code)}
-                                        aria-current={isSelected ? "true" : undefined}
+                                        role="option"
+                                        aria-selected={isSelected}
                                         aria-label={
                                             isSelected
                                                 ? `${language.nativeLabel}, ${t("language.current")}`
                                                 : `${t("language.changeTo")} ${language.nativeLabel}`
                                         }
+                                        onClick={() => handleChangeLanguage(language.code)}
                                         className={[
-                                            "flex items-center",
-                                            "w-full min-h-10",
-                                            "gap-3 px-3",
-                                            "text-left text-sm font-medium",
+                                            "flex items-center justify-between",
+                                            "min-h-10 w-full",
+                                            "gap-3 px-3 py-2",
+                                            "font-sans text-sm font-medium",
                                             isSelected
-                                                ? "bg-elevare-primary-soft text-elevare-primary-deep"
-                                                : "text-elevare-muted hover:bg-elevare-bg hover:text-elevare-ink",
-                                            "transition-colors duration-200",
+                                                ? "text-elevare-primary-deep bg-elevare-primary-soft"
+                                                : "text-elevare-muted bg-transparent",
+                                            "transition-colors hover:bg-elevare-bg hover:text-elevare-primary-deep focus-visible:bg-elevare-primary-soft focus-visible:text-elevare-primary-deep",
                                             "rounded-lg",
-                                            "focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-elevare-primary",
                                         ].join(" ")}
                                     >
-                                        <img
-                                            src={language.iconSrc}
-                                            alt=""
-                                            aria-hidden="true"
-                                            className="w-4 h-4 rounded-full object-cover"
-                                        />
+                                        <span className="inline-flex items-center gap-2">
+                                            <img
+                                                src={language.iconSrc}
+                                                alt=""
+                                                aria-hidden="true"
+                                                className="h-4 w-4 rounded-full"
+                                            />
 
-                                        <span className="flex flex-col leading-tight">
-                                            <span className="font-semibold">
-                                                {language.nativeLabel}
-                                            </span>
-
-                                            <span className="text-xs text-inherit opacity-75">
-                                                {language.short}
-                                            </span>
+                                            <span>{language.nativeLabel}</span>
                                         </span>
 
-                                        {isSelected && (
+                                        {isSelected ? (
                                             <svg
                                                 aria-hidden="true"
                                                 viewBox="0 0 20 20"
-                                                className="w-4 h-4 ml-auto text-elevare-primary"
+                                                className="h-4 w-4 text-elevare-primary"
                                                 fill="currentColor"
                                             >
                                                 <path
@@ -202,14 +187,14 @@ export const LanguageSwitcher = ({ className = "" }) => {
                                                     clipRule="evenodd"
                                                 />
                                             </svg>
-                                        )}
+                                        ) : null}
                                     </button>
                                 </li>
                             );
                         })}
                     </ul>
                 </div>
-            )}
+            ) : null}
         </div>
     );
 };
