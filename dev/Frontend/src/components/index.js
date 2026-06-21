@@ -2,10 +2,11 @@
 //seo
 export * from "./common/seo/PageMeta";
 //navbar
-export * from "./common/header/HeaderHomeMain";
-export * from "./common/header/HeaderHomeTop";
+export * from "./common/header/home/HeaderHomeMain";
+export * from "./common/header/home/HeaderHomeTop";
+export * from "./common/header/home/HeaderHomeOffcanvas";
 //footer
-export * from "./common/footer/FooterHome";
+export * from "./common/footer/home/FooterHome";
 //sidebar
 export * from "./common/dashboard/sidebar/Sidebar";
 //language

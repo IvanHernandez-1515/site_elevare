@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 
 //components
-import { Container } from "../../ui/containers/Container";
-import { LanguageSwitcher } from "../language/LanguageSwitcher";
+import { Container } from "../../../ui/containers/Container";
+import { LanguageSwitcher } from "../../language/LanguageSwitcher";
 
 export const HeaderHomeTop = () => {
     const { t } = useTranslation("home");
