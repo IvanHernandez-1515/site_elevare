@@ -28,42 +28,45 @@
 
 
 
-    /*primary*/
-    --color-elevare-primary: #2563EB;
-    --color-elevare-primary-light: #3B82F6;
-    --color-elevare-primary-dark: #1D4ED8;
+    /* primary */
+    /* --color-elevare-primary: #2563EB; */
+    /* --color-elevare-primary-light: #3B82F6; */
+    /* --color-elevare-primary-dark: #1D4ED8; */
 
     /*secondary*/
-    --color-elevare-secondary: #7C3AED;
-    --color-elevare-secondary-light: #A78BFA;
+    /* --color-elevare-secondary: #7C3AED; */
+    /* --color-elevare-secondary-light: #A78BFA; */
 
     /*neutral*/
-    --color-elevare-neutral-light: #F9FAFB;
-    --color-elevare-neutral-dark: #1F2937;
+    /* --color-elevare-neutral-light: #F9FAFB; */
+    /* --color-elevare-neutral-dark: #1F2937; */
 
     /*text*/
-    --color-elevare-text-main: #111827;
-    --color-elevare-text-muted: #6B7280;
+    /* --color-elevare-text-main: #111827; */
+    /* --color-elevare-text-muted: #6B7280; */
 
     /*feedback*/
-    --color-elevare-success: #10B981;
+    /* --color-elevare-success: #10B981;
     --color-elevare-error: #EF4444;
-    --color-elevare-warning: #F59E0B;
+    --color-elevare-warning: #F59E0B; */
 
     /*accent*/
-    --color-elevare-accent: #E11D48;
+    /* --color-elevare-accent: #E11D48; */
 
     /* === TIPOGRAFÍA === */
-    --font-elevare-sans: "Inter, ui-sans-serif, system-ui, sans-serif";
-    --font-elevare-heading: "Poppins, ui-sans-serif, system-ui, sans-serif";
+    /* --font-elevare-sans: "Inter, ui-sans-serif, system-ui, sans-serif";
+    --font-elevare-heading: "Poppins, ui-sans-serif, system-ui, sans-serif"; */
 
     /*utilities*/
-    --color-features: oklch(93% .034 272.788);
+    /* --color-features: oklch(93% .034 272.788);
     --color-features-responsive: oklab(100% 0 5.96046e-8 / .1);
-    --color-tw-ring-color: #fff;
+    --color-tw-ring-color: #fff; */
 }
 
 @layer utilities {
+    /* =========================
+       Animaciones
+    ========================= */
     @keyframes toast-in {
         from {
             opacity: 0;
@@ -76,6 +79,29 @@
         }
     }
 
+    /* =========================
+    Iconos SVG con mask
+    Permite cambiar color con text-* y dark:text-*
+    ========================= */
+ .icon-mask {
+    display: inline-block;
+    flex-shrink: 0;
+    background-color: currentColor;
+
+    mask-image: var(--icon-url);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+
+    -webkit-mask-image: var(--icon-url);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+}
+
+    /* =========================
+       Offcanvas
+    ========================= */
     .offcanvas-root {
         visibility: hidden;
         pointer-events: none;
@@ -108,7 +134,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-
         .offcanvas-root,
         .offcanvas-backdrop,
         .offcanvas-panel {
@@ -116,15 +141,20 @@
         }
     }
 
+    /* =========================
+       Fondos decorativos
+    ========================= */
     .site-background {
         position: relative;
         overflow: hidden;
 
         background:
-            linear-gradient(180deg,
+            linear-gradient(
+                180deg,
                 #ffffff 0%,
                 #fafcff 50%,
-                #ffffff 100%);
+                #ffffff 100%
+            );
     }
 
     .site-background::before {
@@ -134,14 +164,17 @@
         pointer-events: none;
 
         background-image:
-            linear-gradient(rgba(37, 99, 235, 0.08) 1px,
-                transparent 1px),
-            linear-gradient(90deg,
+            linear-gradient(
                 rgba(37, 99, 235, 0.08) 1px,
-                transparent 1px);
+                transparent 1px
+            ),
+            linear-gradient(
+                90deg,
+                rgba(37, 99, 235, 0.08) 1px,
+                transparent 1px
+            );
 
         background-size: 48px 48px;
-
         opacity: 0.75;
     }
 
@@ -152,33 +185,15 @@
         pointer-events: none;
 
         background-image:
-            radial-gradient(circle,
+            radial-gradient(
+                circle,
                 rgba(37, 99, 235, 0.35) 1px,
-                transparent 1px);
+                transparent 1px
+            );
 
         background-size: 48px 48px;
-
         opacity: 0.55;
     }
-
-    .site-background-glow {
-        position: absolute;
-        bottom: -200px;
-        left: -200px;
-
-        width: 550px;
-        height: 550px;
-
-        border-radius: 50%;
-
-        background: radial-gradient(circle,
-                rgba(37, 99, 235, 0.12) 0%,
-                rgba(37, 99, 235, 0.06) 35%,
-                transparent 75%);
-
-        pointer-events: none;
-    }
-
 }
 
 html {

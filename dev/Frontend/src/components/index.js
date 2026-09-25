@@ -18,6 +18,9 @@ export * from "./layouts/auth/AuthLayout";
 export * from "./layouts/dashboard/DashboardLayout";
 
 //ui
+//svg
+export * from "./ui/icons/SVGIcon";
+//containers
 export * from "./ui/containers/Container";
 export * from "./ui/containers/ContainerExpandMobile";
 export * from "./ui/containers/ContainerCustom";
