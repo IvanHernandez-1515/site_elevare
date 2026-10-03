@@ -37,8 +37,8 @@ const HeroSection = () => {
 
     return (
         <section aria-labelledby="hero-title" className="overflow-hidden font-sans text-elevare-ink">
-            <Container>
-                <div className="relative z-10 py-10 md:py-16 lg:flex lg:items-center lg:py-20">
+            <Container className="my-8">
+                <div className="relative z-10 py-10 md:py-16 lg:flex lg:items-center">
                     <div className="flex flex-col w-full lg:w-1/2 lg:shrink-0">
                         <h1 id="hero-title" className="w-full font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
                             <span className="block">{t("hero.title.line1")}</span>

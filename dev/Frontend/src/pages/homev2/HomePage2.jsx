@@ -5,6 +5,7 @@ import {PageMeta} from "../../components/common/seo/PageMeta";
 import { HomeLayout } from '../../components';
 //sections
 import HeroSection from "./HeroSection";
+import ProblemSolutionSection from "./ProblemSolutionSection";
 
 const HomePage2 = () => {
     const { t, i18n } = useTranslation("home");
@@ -17,6 +18,7 @@ const HomePage2 = () => {
             />
             <HomeLayout>
                 <HeroSection />
+                <ProblemSolutionSection />
             </HomeLayout>
         </>
     );
