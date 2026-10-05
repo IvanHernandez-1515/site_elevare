@@ -6,6 +6,8 @@ import { HomeLayout } from '../../components';
 //sections
 import HeroSection from "./HeroSection";
 import ProblemSolutionSection from "./ProblemSolutionSection";
+import FeatureSection from "./FeatureSection";
+import HowtoWorkSection from "./HowworkSection";
 
 const HomePage2 = () => {
     const { t, i18n } = useTranslation("home");
@@ -19,6 +21,8 @@ const HomePage2 = () => {
             <HomeLayout>
                 <HeroSection />
                 <ProblemSolutionSection />
+                <FeatureSection />
+                <HowtoWorkSection />
             </HomeLayout>
         </>
     );
