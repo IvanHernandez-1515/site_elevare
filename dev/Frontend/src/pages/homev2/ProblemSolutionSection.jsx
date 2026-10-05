@@ -1,8 +1,29 @@
 import { useTranslation } from "react-i18next";
 //components
-import { ContainerSmall } from "../../components";
+import { ContainerSmall, SvgIcon } from "../../components";
 //icons
 import { ArrowRight } from "lucide-react";
+//assets
+import problemBadgeIcon from "@/assets/images/pages/imagenes/home/problemsection/problem-badge.svg";
+import problemRepeatIcon from "@/assets/images/pages/imagenes/home/problemsection/problem-repeat.svg";
+import problemTimeIcon from "@/assets/images/pages/imagenes/home/problemsection/problem-time.svg";
+import problemTargetIcon from "@/assets/images/pages/imagenes/home/problemsection/problem-target.svg";
+import solutionShieldIcon from "@/assets/images/pages/imagenes/home/problemsection/solution-shield.svg";
+import solutionProfileIcon from "@/assets/images/pages/imagenes/home/problemsection/solution-profile.svg";
+import solutionVersionsIcon from "@/assets/images/pages/imagenes/home/problemsection/solution-versions.svg";
+import solutionShieldCheckIcon from "@/assets/images/pages/imagenes/home/problemsection/solution-shield-check.svg";
+
+const PROBLEM_ICONS = [
+    problemRepeatIcon,
+    problemTimeIcon,
+    problemTargetIcon,
+];
+
+const SOLUTION_ICONS = [
+    solutionProfileIcon,
+    solutionVersionsIcon,
+    solutionShieldCheckIcon,
+];
 
 const ProblemSolutionSection = () => {
     const { t } = useTranslation("home");
@@ -16,13 +37,16 @@ const ProblemSolutionSection = () => {
     });
 
     return (
-        <section aria-labelledby="problem-solution-title" className="font-sans text-elevare-ink">
+        <section
+            aria-labelledby="problem-solution-title"
+            className="py-5 font-sans text-elevare-ink"
+        >
             <h2 id="problem-solution-title" className="sr-only">
                 {t("problemSolution.problem.title")} / {t("problemSolution.solution.title")}
             </h2>
             <ContainerSmall>
                 <div className="relative">
-                    <div className="grid md:grid-cols-2 gap-2 md:gap-6">
+                    <div className="grid gap-2 md:grid-cols-2 md:gap-6">
                         <div
                             aria-labelledby="problem-title"
                             className="h-full p-6 bg-elevare-problem-soft shadow-sm border border-elevare-problem/20 rounded-2xl sm:p-8"
@@ -31,18 +55,37 @@ const ProblemSolutionSection = () => {
                                 <span
                                     aria-hidden="true"
                                     className="grid size-10 shrink-0 place-items-center text-elevare-problem bg-elevare-surface border border-elevare-problem/20 rounded-xl"
-                                />
-                                <h3 id="problem-title" className="font-display text-lg font-semibold text-elevare-problem">
+                                >
+                                    <SvgIcon
+                                        src={problemBadgeIcon}
+                                        className="size-6"
+                                    />
+                                </span>
+
+                                <h3
+                                    id="problem-title"
+                                    className="font-display text-lg font-semibold text-elevare-problem"
+                                >
                                     {t("problemSolution.problem.title")}
                                 </h3>
                             </div>
+
                             <ul className="flex flex-col mt-6 gap-4">
                                 {problemItems.map((item, index) => (
-                                    <li key={`${index}-${item}`} className="flex items-center gap-3">
+                                    <li
+                                        key={item}
+                                        className="flex items-center gap-3"
+                                    >
                                         <span
                                             aria-hidden="true"
-                                            className="grid size-7 shrink-0 place-items-center text-elevare-problem bg-elevare-surface border border-elevare-problem/20 rounded-full"
-                                        />
+                                            className="grid size-8 shrink-0 place-items-center text-elevare-problem bg-elevare-surface border border-elevare-problem/20 rounded-full"
+                                        >
+                                            <SvgIcon
+                                                src={PROBLEM_ICONS[index]}
+                                                className="size-4"
+                                            />
+                                        </span>
+
                                         <span className="text-sm leading-6 text-elevare-muted sm:text-base">
                                             {item}
                                         </span>
@@ -66,7 +109,13 @@ const ProblemSolutionSection = () => {
                                 <span
                                     aria-hidden="true"
                                     className="grid size-10 shrink-0 place-items-center text-elevare-accent bg-elevare-surface border border-elevare-accent rounded-xl"
-                                />
+                                >
+                                    <SvgIcon
+                                        src={solutionShieldIcon}
+                                        className="size-6"
+                                    />
+                                </span>
+
                                 <h3
                                     id="solution-title"
                                     className="font-display text-lg font-semibold text-elevare-accent"
@@ -77,14 +126,18 @@ const ProblemSolutionSection = () => {
                             <ul className="flex flex-col mt-6 gap-4">
                                 {solutionItems.map((item, index) => (
                                     <li
-                                        key={`${index}-${item}`}
+                                        key={item}
                                         className="flex items-center gap-3"
                                     >
                                         <span
                                             aria-hidden="true"
-                                            className="grid size-7 shrink-0 place-items-center text-elevare-accent bg-elevare-surface border border-elevare-accent rounded-full"
-                                        />
-
+                                            className="grid size-8 shrink-0 place-items-center text-elevare-accent bg-elevare-surface border border-elevare-accent rounded-full"
+                                        >
+                                            <SvgIcon
+                                                src={SOLUTION_ICONS[index]}
+                                                className="size-4"
+                                            />
+                                        </span>
                                         <span className="text-sm leading-6 text-elevare-muted sm:text-base">
                                             {item}
                                         </span>
