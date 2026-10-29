@@ -12,22 +12,22 @@ const HOWITWORKS_ICONS = [
     {
         id: "createProfile",
         icon: createProfile,
-        color: "text-elevare-primary"
+        color: "bg-elevare-primary-soft text-elevare-primary"
     },
     {
         id: "chooseTemplate",
         icon: chooseTemplate,
-        color: "text-elevare-primary",
+        color: "bg-elevare-primary-soft text-elevare-primary",
     },
     {
         id: "customizeVersion",
         icon: customizeVersion,
-        color: "text-elevare-primary",
+        color: "bg-elevare-primary-soft text-elevare-primary",
     },
     {
         id: "exportApply",
         icon: exportApply,
-        color: "text-elevare-primary"
+        color: "bg-elevare-primary-soft text-elevare-primary"
     }
 ];
 
@@ -41,7 +41,7 @@ const HowtoWorkSection = () => {
     return(
         <section aria-labelledby="howork-title" className="py-5 font-sans text-elevare-ink">
             <Container>
-                <h2 id="howitwork-title">
+                <h2 id="howitwork-title" className="font-bold text-2xl sm:text-3xl text-center mb-4">
                     {t("howItWorks.title")}
                 </h2>
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -61,7 +61,10 @@ const HowtoWorkSection = () => {
                                 >
                                     <SvgIcon src={feature.icon} className="size-8"></SvgIcon>
                                 </span>
-                                <h3 id={titleId} className="text-lg font-semibold leading-7 text-elevare-ink">{works.title}</h3>
+                                <div>
+                                    <h3 id={titleId} className="text-lg font-semibold leading-7 text-elevare-ink">{works.title}</h3>
+                                    <p className="text-sm text-elevare-muted sm:text-base">{works.description}</p>
+                                </div>
                             </div>
                         );
                     })}
